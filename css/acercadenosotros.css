@@ -26,3 +26,19 @@ h1{
       width: 100%;
     }
   }
+
+  /* Barrita :v*/
+  .barra {
+    background-color: #A82112;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .barra p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
