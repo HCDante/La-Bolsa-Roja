@@ -42,3 +42,8 @@ h1{
     font-weight: bold;
     margin: 0;
   }
+
+  .card{
+    background-color: #C4C4C4;
+    color: black;
+  }
