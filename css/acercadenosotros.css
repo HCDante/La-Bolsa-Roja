@@ -47,3 +47,9 @@ h1{
     background-color: #C4C4C4;
     color: black;
   }
+
+  .btn{
+    background-color: #A82112;
+    border: black;
+    color: white;
+  }
