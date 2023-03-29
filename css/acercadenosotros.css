@@ -2,3 +2,26 @@ i{
     font-size: 50px;
     color: black;
 }
+
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+    align-items: center;
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
