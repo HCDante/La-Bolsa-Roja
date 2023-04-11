@@ -1,7 +1,7 @@
-const Nombre = document.getElementById("textNombre");
-const Email = document.getElementById("textEmail");
-const Telef = document.getElementById("textTelef");
-const Mensaje = document.getElementById("textMensaje");
+const nombre = document.getElementById("name");
+const email = document.getElementById("email");
+const teléfono = document.getElementById("teléfono");
+const mensaje = document.getElementById("mensaje");
 const form = document.getElementById("form")
 const parrafo = document.getElementById("warnings")
 
@@ -11,7 +11,7 @@ form.addEventListener("submit", e=>{
     let enviar = false
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     parrafo.innerHTML =""
-    if(Nombre.value.length <6){
+    if(nombre.value.length <6){
         warnings +=`El nombre no es valido <br>`
         enviar = "true"
     }
@@ -20,7 +20,7 @@ form.addEventListener("submit", e=>{
         enviar = true
 
     }
-    if(Telef.value.length <10){
+    if(teléfono.value.length <10){
         warnings +=`El número teléfonico no es valido <br>`
         enviar = true
     }
