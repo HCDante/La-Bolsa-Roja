@@ -31,7 +31,25 @@ form.addEventListener("submit", e=>{
     if (enviar){
         parrafo.innerHTML = warnings;
     }else {
-        parrafo.innerHTML = "Mensaje enviado";
+        let ebody = `
+    <h1>Nombre: </h1>${nombre.value}
+    <br>
+    <h1>Correo: </h1>${email.value}
+    <br>
+    <h1>Telefono: </h1>${teléfono.value}
+    <br>
+    <h1>Mensaje: </h1>${mensaje.value}
+    `;
+    Email.send({
+        SecureToken : "2beb6908-098a-4ce9-8217-645950d7272e",
+        To : 'javadabbado@gmail.com',
+        From : "javadabbado@gmail.com",
+        Subject : "This is the subject",
+        Body : ebody
+    }).then(
+      message => alert(message)
+    );
+        parrafo.innerHTML = "Mensaje enviado"
     }
 
 })
