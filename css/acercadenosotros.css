@@ -74,3 +74,18 @@ h1{
     background-color: #292c30;
     color: white;
   }
+
+  .form-control{
+    background-color: #C4C4C4;
+
+  }
+
+  .color{
+    background-color:  #C4C4C4;
+    border-radius: 15px;
+    font-size: 12px;
+  }
+  
+  .espacio{
+    margin-top: 10px;
+  }
