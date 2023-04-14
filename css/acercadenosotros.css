@@ -89,3 +89,47 @@ h1{
   .espacio{
     margin-top: 10px;
   }
+
+  
+/* Propuesta navbar móvil*/
+.barra-nav {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .barra-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  .barra-nav a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  .barra-nav a:hover {
+    color: #A82112;
+  }
+
+  .barra-nav a:first-child {
+    margin-left: 2;
+  }
+
+  .barra-nav a:last-child {
+    margin-right: 2;
+  }
+
+  .barra-nav .perfil {
+    margin: 0 auto;
+  }
+}
