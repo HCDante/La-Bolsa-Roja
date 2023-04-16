@@ -72,7 +72,7 @@ form.addEventListener("submit", e=>{
     );
         parrafo.innerHTML = 
         `<div  class="alert alert-success d-flex align-items-center" role="alert">
-            <svg  class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
             <div>
                 Mensaje enviado correctamente.
             </div>
