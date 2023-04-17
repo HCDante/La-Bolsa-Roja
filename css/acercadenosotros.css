@@ -1,27 +1,74 @@
-.sobre2{
-  display: flex;
-  justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.col{
-  display: flex;
-  justify-content: center !important;
+header{
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    position: fixed;
+    z-index: 1;
 }
 
-.ancho{
-  max-width: 767px;
-  justify-content: center;
+.container__menu{
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
-i{
-    font-size: 50px;
-    color: black;
+.logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
-.navbar-toggler{
-  border: hidden;
+
+.logo img{
+    width: 60px;
+
 }
-p{
-    font-family: 'Open Sans', sans-serif;
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu ul li{
+    list-style: none;
+    margin-left: 36px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#selected{
+    background: rgb(191, 64, 17);
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 50px;
+}
+
+.menu nav img{
+    display: none;
+}
+
+.menu #btn_menu{
+    display: none;
 }
 
 h1{
@@ -43,52 +90,7 @@ h1{
     }
   }
 
-  /* Barrita :v*/
-  .barra {
-    background-color: #A82112;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .barra p {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
 
-  .card{
-    background-color: #C4C4C4;
-    color: black;
-  }
-
-  .btn{
-    background-color: #A82112;
-    border: black;
-    color: white;
-  }
-
-  .container_f{
-    background-color: #292c30;
-    color: white;
-  }
-
-  .form-control{
-    background-color: #C4C4C4;
-
-  }
-
-  .color{
-    background-color:  #C4C4C4;
-    border-radius: 15px;
-    font-size: 12px;
-  }
-  
-  .espacio{
-    margin-top: 10px;
-  }
 
   
 /* Propuesta navbar móvil*/
@@ -131,5 +133,104 @@ h1{
 
   .barra-nav .perfil {
     margin: 0 auto;
+  }
+}
+
+/*COVER*/
+
+
+.container__cover{
+  width: 100%;
+  height: 800px;
+  background-image: url(../images/Background-page.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.cover{
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/*Haciendo la página Responsive*/
+
+@media screen and (max-width:1200px){
+
+  header{
+      padding: 40px;
+  }
+
+}
+
+@media screen and (max-width: 720px){
+
+  .menu nav{
+      position: fixed;
+      top: 0;
+      right: -250px;
+      background: white;
+      width: 250px;
+      height: 100vh;
+      padding: 40px;
+      z-index: 1;
+      transition: all 300ms;
+  }
+
+  .menu ul{
+      flex-direction: column;
+      margin-top: 40px;
+  }
+
+  .menu ul li{
+      margin-top: 30px;
+      margin-left: 0;
+  }
+
+  .menu ul li a{
+      color: #bebebe;
+  }
+
+  #selected{
+      background: none;
+      padding: 0px;
+      border-radius: none;
+      color: #F6615D;
+  }
+
+  .menu nav img{
+      display: block;
+      width: 60px;
+  }
+
+  #back_menu{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: none;
+  }
+
+  .menu #btn_menu{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #bf4011;
+      font-size: 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 300ms;
+  }
+
+  .menu #btn_menu:hover{
+      background: rgba(255, 255, 255, 0.2);
   }
 }
