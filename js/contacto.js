@@ -35,7 +35,7 @@ form.addEventListener("submit", e => {
         email.style.border = "solid 0.2rem green";
     }
     //if(teléfono.value.length <10)
-    if (!regexTel.test(trimTelef)) {
+    if (!regexTel.test(trimTelef)||trimTelef==0) {
         warnings += `El número teléfonico no es valido <br>`;
         enviar = true;
         teléfono.style.border = "solid 0.2rem red";
