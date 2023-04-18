@@ -255,3 +255,32 @@ footer{
       position: relative;
   }
 }
+
+.ancho{
+  max-width: 767px;
+  align-self: center;
+}
+
+.colancho{
+  max-width: 368px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.titulocon{
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #A82112;
+}
+
+
+.bi{
+    color: #C4C4C4;
+}
+
+.valores{
+    color: #A82112;
+}
