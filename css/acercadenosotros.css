@@ -9,10 +9,12 @@
 }
 
 header{
+    background: #ffffff;
+    padding: 20px;
     width: 100%;
     height: 80px;
     margin-top: 40px;
-    position: fixed;
+    position: relative;
     z-index: 1;
 }
 
@@ -273,7 +275,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #A82112;
+  color: rgb(191, 64, 17);
 }
 
 
@@ -282,7 +284,7 @@ footer{
 }
 
 .valores{
-    color: #A82112;
+    color: rgb(191, 64, 17);
 }
 
 .box {
