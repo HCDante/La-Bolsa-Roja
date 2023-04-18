@@ -20,7 +20,7 @@ form.addEventListener("submit", e => {
     let trimMensaje = mensaje.value.trim();
 
     if (trimName.length <= 2) {
-        warnings += `El nombre no es valido <br>`;
+        warnings += `El nombre no es válido <br>`;
         enviar = "true";
         nombre.style.border = "solid 0.2rem red";
 
@@ -28,7 +28,7 @@ form.addEventListener("submit", e => {
         nombre.style.border = "solid 0.2rem green";
     }
     if (!regexEmail.test(trimEmail)) {
-        warnings += `El correo no es valido <br>`;
+        warnings += `El correo no es válido <br>`;
         enviar = true;
         email.style.border = "solid 0.2rem red";
     } else {
@@ -36,7 +36,7 @@ form.addEventListener("submit", e => {
     }
     //if(teléfono.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
-        warnings += `El número teléfonico no es valido <br>`;
+        warnings += `El número teléfonico no es válido <br>`;
         enviar = true;
         teléfono.style.border = "solid 0.2rem red";
     } else {
