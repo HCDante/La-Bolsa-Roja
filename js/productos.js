@@ -2,7 +2,7 @@ let productos = [
     {"id":1,
     "title":"Caja 1",
     "price":50,
-    "description":"Bolsa perfecta para accesorios diversos",
+    "description":"Caja perfecta para accesorios diversos",
     "image":"../src/productos/27"},
     {"id":2,
     "title":"Caja 2",
