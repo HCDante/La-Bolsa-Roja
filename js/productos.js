@@ -3,7 +3,7 @@ let productos = [
     "title":"Caja 1",
     "price":50,
     "description":"Caja perfecta para accesorios diversos",
-    "image":"../src/productos/27"},
+    "image":"../src/productos/27.jpeg"},
     {"id":2,
     "title":"Caja 2",
     "price":50,
@@ -60,20 +60,20 @@ function getProducto(){
         }
         setTimeout( () =>{
             resolve (productos);
-        },2000);
+        },500);
     });
 }
 getProducto()
             .then( (prod) =>{
                 prod.forEach(element =>{
                     let html= 
-                    `<div class="col">
-                    <div class="card h-350">
-                        <img src=${element.image} class="card-img-top">
+                    `<div class="col ">
+                    <div class="card h-350 ">
+                        <img  src=${element.image} class="card-img-top card-image">
                             <div class="card-body">
                                 <h5 class="card-title">${element.title}</h5>
-                                <p class ="card-text">${element.description}<button type="button" class="btn btn-primary">Primary</button></p>
-                                
+                                <p class ="card-text">${element.description}</p>
+                                <button type="button" class="btn btn-primary">Primary</button>
                             </div>
                     </div> </div>
                     `;
