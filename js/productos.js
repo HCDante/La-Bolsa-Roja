@@ -73,7 +73,7 @@ getProducto()
                             <div class="card-body">
                                 <h5 class="card-title">${element.title}</h5>
                                 <p class ="card-text">${element.description}</p>
-                                <button type="button" class="btn btn-primary">Primary</button>
+                                <button type="button" class="btn btn-danger">Ver Item</button>
                             </div>
                     </div> </div>
                     `;
