@@ -7,7 +7,7 @@
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
 }
-/*Navbar*/
+/*Navbar-----------------------------------------------------------------------*/
 header{
     background: #ffffff;
     padding: 20px;
@@ -92,7 +92,7 @@ h1{
     }
   }
 
-  /*Haciendo la página Responsive*/
+  /*Haciendo la página Responsive---------------------------------------------------------------*/
 
 @media screen and (max-width:1200px){
 
@@ -175,6 +175,7 @@ h1{
     min-height: 100vh;
   }
   
+  /*FOOTER-----------------------------------------------------------------------------------*/
   footer{
     background-color: #f2f2f2;
     padding: 20px;
@@ -226,7 +227,7 @@ h1{
     justify-content: center;
   }
 
-  /* Propuesta navbar móvil*/
+  /* Propuesta navbar móvil--------------------------------------------------------------------------------*/
 .barra-nav {
     display: none;
   }
