@@ -51,8 +51,26 @@
     "image":"../src/productos/10.jpeg"},
 ];
  */
+let productos;
 let cardGroup = document.getElementsByClassName("row");
-let productos=JSON.parse(localStorage.getItem("productos"));
+if (localStorage.getItem("productos") == null){
+    fetch('./js/productos.json')
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem("productos",JSON.stringify(data));
+      })
+    .catch(error => {
+      console.error('Error al leer el archivo JSON:', error);
+    });
+
+  }else{
+
+    productos=JSON.parse(localStorage.getItem("productos"));
+
+  } 
+
+
+productos=JSON.parse(localStorage.getItem("productos"));
 
 
 function getProducto(){
