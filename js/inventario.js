@@ -4,6 +4,7 @@ fetch('./js/productos.json')
   .then(response => response.json())
   .then(data => {
     inventario=data;
+    localStorage.setItem("datos",JSON.stringify(data));
   })
   .catch(error => {
     console.error('Error al leer el archivo JSON:', error);
@@ -25,9 +26,7 @@ function agregarProducto() {
         document.getElementById("price").value = "";
         document.getElementById("description").value = "";
         document.getElementById("image").value = "";
-    }
-
-    
+    }   
 }
 
 /* 

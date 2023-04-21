@@ -23,7 +23,7 @@
   <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 
-  <title>Productos</title>
+  <title>Inventario</title>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
           <img src="./src/developer_activity.svg" alt="">
           <ul>
             <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./productos.html" id="selected">Productos</a></li>
+            <li><a href="./productos.html" id="selected">Inventario</a></li>
             <li><a href="./acercadenosotros.html" >Sobre Nosotros</a></li>
             <li><a href="./comunidad.html">Comunidad</a></li>
             <li><a href="./contacto.html">Contáctanos</a></li>
@@ -55,33 +55,35 @@
   <div class="container-form-inv ">
     <h2>Inventario</h2>
     <form>
-      <div class="input-group mb-3 ">
-        <span class="input-group-text labelText ">#id:</span>
-        <input type="number" class="form-control" aria-label="title">
-      </div>
-      <div class="input-group mb-3 ">
-        <span class="input-group-text labelText">Nombre:</span>
-        <input type="text" class="form-control" aria-label="name">
-      </div>      
-      <div class="input-group ">
-        <span class="input-group-text labelText">Descripción:</span>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </div>
-      <br>
-      <div class="input-group mb-3 ">          
-        <span class="input-group-text labelText">Precio $0.00</span>
-        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-      </div>
-      <div class="prueba ">Seleccionar Imagen:</div>
+      <form>
+        <div class="input-group mb-3 ">
+          <span class="input-group-text labelText ">Imagen:</span>
+          <input type="text" class="form-control" aria-label="title" id="image">
+        </div>
+        <div class="input-group mb-3 ">
+          <span class="input-group-text labelText">Nombre:</span>
+          <input type="text" class="form-control" aria-label="name" id="title">
+        </div>      
+        <div class="input-group ">
+          <span class="input-group-text labelText">Descripción:</span>
+          <textarea class="form-control" aria-label="With textarea" id="description"></textarea>
+        </div>
+        <br>
+        <div class="input-group mb-3 ">          
+          <span class="input-group-text labelText">Precio $0.00</span>
+          <input type="text" class="form-control" id="price" aria-label="Dollar amount (with dot and two decimal places)">
+        </div>
+       
+        <button type="button" class="btn btn-danger" onclick="agregarProducto()">Agregar</button>
+      </form>
+      <!-- <div class="prueba ">Seleccionar Imagen:</div>
       <div class="input-group mb-3 ">
         
         <label class="input-group-text labelText labelText-mobile" for="inputGroupFile01">Imagen</label>
         <input type="file" class="form-control" id="inputGroupFile01">
-      </div>
-      <button type="button" class="btn btn-danger" onclick="agregarProducto()">Agregar</button>
-    </form>
+      </div> -->
     <br>
-    <table class="table">
+    <!-- <table class="table">
       <thead>
         <tr>
           <th>#id</th>
@@ -92,7 +94,7 @@
       </thead>
       <tbody id="tablaInventario">
       </tbody>
-    </table>
+    </table> -->
   </div>
  
   <br>
