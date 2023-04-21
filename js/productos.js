@@ -1,4 +1,4 @@
-let productos = [
+/* let productos = [
     {"id":1,
     "title":"Caja 1",
     "price":50,
@@ -50,8 +50,10 @@ let productos = [
     "description":"Bolsa perfecta para accesorios diversos",
     "image":"../src/productos/10.jpeg"},
 ];
-
+ */
 let cardGroup = document.getElementsByClassName("row");
+let productos=JSON.parse(localStorage.getItem("productos"));
+
 
 function getProducto(){
     return new Promise( (resolve, reject) => {
@@ -113,3 +115,5 @@ getProducto()
     });
 }
 getProducto(); */
+
+

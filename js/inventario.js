@@ -1,32 +1,45 @@
 let inventario;
 let id=0;
-fetch('./js/productos.json')
-  .then(response => response.json())
-  .then(data => {
-    inventario=data;
-    localStorage.setItem("datos",JSON.stringify(data));
-  })
-  .catch(error => {
-    console.error('Error al leer el archivo JSON:', error);
-  });
 
 
+  if (localStorage.getItem("productos") == null){
+    fetch('./js/productos.json')
+    .then(response => response.json())
+    .then(data => {
+      inventario=data;
+      })
+    .catch(error => {
+      console.error('Error al leer el archivo JSON:', error);
+    });
+
+  }else{
+
+    inventario=JSON.parse(localStorage.getItem("productos"));
+
+  } 
+
+  
 
 function agregarProducto() {
     let title = document.getElementById("title").value;
     let price = Number(document.getElementById("price").value);
     let description = document.getElementById("description").value;
-    let image = '../src/productos/'+document.getElementById("image").value;
-    id = inventario.length+1;
-    if (title !== "" && price !== "") {
+    let image = document.getElementById("image").value;
+    
+
+      if (title !== "" && price !== "") {
+      id = inventario.length+1;
            
         inventario.push({id:id,title: title, price: price, description: description, image: image});
-       
+        localStorage.setItem("productos",JSON.stringify(inventario));
+
         document.getElementById("title").value = "";
         document.getElementById("price").value = "";
         document.getElementById("description").value = "";
         document.getElementById("image").value = "";
-    }   
+    }
+
+    
 }
 
 /* 
