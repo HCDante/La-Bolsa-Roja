@@ -16,6 +16,15 @@
     justify-content: center;
 }
 
+.warnings{
+    width: 200px;
+      text-align: center;
+      margin: auto;
+      color: rgb(198, 51, 51);
+      padding-top: 20px;
+  }
+
+  
 @media (max-width: 450px){
     .prueba{
         display: inline-block;
