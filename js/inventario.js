@@ -1,13 +1,33 @@
-const  ID_Producto = document.getElementById("ID");
+
 const nombre = document.getElementById("name");
 const descripcion = document.getElementById("description");
 const precio = document.getElementById("price");
-const imagen = document.getElementById("selection");
+const imagen = document.getElementById("image");
 const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 const btnEnviar = document.getElementById("btn-enviar");
 
 //form.addEventListener("submit", e => { e.preventDefault()});
+
+let inventario;
+let id=0;
+
+
+  if (localStorage.getItem("productos") == null){
+    fetch('./js/productos.json')
+    .then(response => response.json())
+    .then(data => {
+      inventario=data;
+      })
+    .catch(error => {
+      console.error('Error al leer el archivo JSON:', error);
+    });
+
+  }else{
+
+    inventario=JSON.parse(localStorage.getItem("productos"));
+
+  } 
 
  console.log("Hola com estas");
 btnEnviar.addEventListener("click", e => {
@@ -19,20 +39,11 @@ btnEnviar.addEventListener("click", e => {
     let regexPrice = /^\d/;
     parrafo.innerHTML = "";
 
-    let trimID = ID_Producto.value.trim();
     let trimName = nombre.value.trim();
     let trimDescription = descripcion.value.trim();
     let trimPrice = precio.value.trim();
-    //let trimSelection = imagen.value.trim();
+    let trimImage = imagen.value.trim();
 
-    if (trimID.length <= 1) {
-        warnings += `El código no es válido <br>`;
-        agregar = "true";
-        ID_Producto.style.border = "solid 0.15rem red";
-
-    } else {
-        ID_Producto.style.border = "solid 0.15rem green";
-    }
     if (trimName.length <= 2) {
         warnings += `El nombre no es válido <br>`;
         agregar = "true";
@@ -56,56 +67,48 @@ btnEnviar.addEventListener("click", e => {
         precio.style.border = "solid 0.15rem green";
     }
     // Seccion para validar si un imagen fue subida !!!!PENDIENTE!!!!
-    // if (trimSelection) {
-    //     warnings += `No se ha seleccionado alguna imagen <br>`;
-    //     agregar = "true";
-    //     nombre.style.border = "solid 0.2rem red";
+    if (trimImage < 5) {
+        warnings += `No se ha seleccionado alguna imagen <br>`;
+        agregar = "true";
+        imagen.style.border = "solid 0.15rem red";
 
-    // } else {
-    //     nombre.style.border = "solid 0.2rem green";
-    // }
+    } else {
+        imagen.style.border = "solid 0.15rem green";
+    }
     if (agregar) {
         parrafo.innerHTML = warnings;
     } else {
-
+    //Se agregan los productos al local storage
+    agregarProducto(trimName, trimPrice, trimDescription, trimImage);
       parrafo.innerHTML =
-      `<div  class="alert alert-success d-flex align-items-center" role="alert">
-      <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-      <div>
-          Mensaje enviado correctamente.
-      </div>
-   </div>`;
+        `<div  class="alert alert-success d-flex align-items-center" role="alert">
+            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+                Mensaje enviado correctamente.
+            </div>
+        </div>`;
     }
+    borderTimeout();
+
 });
 
-
-let inventario;
-let id=0;
-
-
-  if (localStorage.getItem("productos") == null){
-    fetch('./js/productos.json')
-    .then(response => response.json())
-    .then(data => {
-      inventario=data;
-      })
-    .catch(error => {
-      console.error('Error al leer el archivo JSON:', error);
-    });
-
-  }else{
-
-    inventario=JSON.parse(localStorage.getItem("productos"));
-
-  } 
+//funcion para que una vez que se verifiquen las entradas de datos se regrese al borde normal
+function borderTimeout(){
+    setTimeout( () => {
+        nombre.style.border = "";
+        descripcion.style.border ="";
+        precio.style.border ="";
+        imagen.style.border ="";
+    },1500);
+}
 
   
 
-function agregarProducto() {
-    let title = document.getElementById("title").value;
-    let price = Number(document.getElementById("price").value);
-    let description = document.getElementById("description").value;
-    let image = document.getElementById("image").value;
+function agregarProducto(title, price, description, image) {
+    // let title = document.getElementById("title").value;
+    // let price = Number(document.getElementById("price").value);
+    // let description = document.getElementById("description").value;
+    // let image = document.getElementById("image").value;
     
 
       if (title !== "" && price !== "") {
@@ -114,7 +117,7 @@ function agregarProducto() {
         inventario.push({id:id,title: title, price: price, description: description, image: image});
         localStorage.setItem("productos",JSON.stringify(inventario));
 
-        document.getElementById("title").value = "";
+        document.getElementById("name").value = "";
         document.getElementById("price").value = "";
         document.getElementById("description").value = "";
         document.getElementById("image").value = "";
