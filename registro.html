@@ -73,7 +73,7 @@
               <div class="col-md-6">
                 <label>Contraseña</label>
                 <div class="input-group">
-                  <input ID="txtPassword" pattern=".{10,}" type="Password" Class="form-control" id="password">
+                  <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control">
                   <div class="input-group-pswd">
                     <button id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span
                         class="fa fa-eye-slash icon"></span> </button>
@@ -83,7 +83,7 @@
               <div class="col-md-6">
                 <label>Confirmar Contraseña</label>
                 <div class="input-group">
-                  <input ID="txtPassword2" pattern=".{10,}" type="Password" Class="form-control" id="password2">
+                  <input id="txtPassword2" pattern=".{10,}" type="Password" Class="form-control">
                   <div class="input-group-pswd2">
                     <button id="show_password2" class="btn btn-danger" type="button" onclick="mostrarPassword2()"> 
                       <span class="fa fa-eye-slash icon2"></span> </button>
@@ -92,8 +92,8 @@
                 </div>
               </div>
               <br>
-              <button type="button" class="btn btn-danger" onclick="()">Crear cuenta</button>
-              <p class="warnings" id="warnings"></p>
+              <button type="button" id="button" class="btn btn-danger" >Crear cuenta</button>
+              <div id="warnings"></div>
             </div>
           </div>
         </form>

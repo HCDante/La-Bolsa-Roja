@@ -1,14 +1,15 @@
 const nombre = document.getElementById("name");
 const email = document.getElementById("mail");
 const tel = document.getElementById("telephone");
-const password= document.getElementById("password");
-const password2= document.getElementById("password2");
-const form = document.getElementById("form");
+const password= document.getElementById("txtPassword");
+const password2= document.getElementById("txtPassword2");
+const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
 
 
-form.addEventListener("submit", e => {
+btn.addEventListener("click", e => {
     e.preventDefault();
+    console.log("Se ingresa a la funcion");
     let warnings = "";
     let enviar = false;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -24,7 +25,7 @@ form.addEventListener("submit", e => {
     let trimPassword2 = password2.value.trim();
 
     if (trimName.length <= 2) {
-        warnings += `El nombre no es válido <br>`;
+        warnings += `- El nombre no es válido <br>`;
         enviar = "true";
         nombre.style.border = "solid 0.2rem red";
 
@@ -32,7 +33,7 @@ form.addEventListener("submit", e => {
         nombre.style.border = "solid 0.2rem green";
     }
     if (!regexEmail.test(trimEmail)) {
-        warnings += `El correo no es válido <br>`;
+        warnings += `- El correo no es válido <br>`;
         enviar = true;
         email.style.border = "solid 0.2rem red";
     } else {
@@ -40,21 +41,22 @@ form.addEventListener("submit", e => {
     }
     //if(tel.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
-        warnings += `El número teléfonico no es válido <br>`;
+        warnings += `- El número teléfonico no es válido <br>`;
         enviar = true;
         tel.style.border = "solid 0.2rem red";
     } else {
         tel.style.border = "solid 0.2rem green";
     }
     if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
-        warnings += `Contraseña no válida, debe contener mínimo 6 carácteres con al menos 1 mayúscula, 1 número y 1 carácter especial.<br>`;
+        warnings += `- Contraseña no válida, debe contener mínimo 6 carácteres con al menos 1 mayúscula, 1 número y 1 carácter especial.<br>`;
         enviar = true;
         password.style.border = "solid 0.2rem red";
     } else {
         password.style.border = "solid 0.2rem green";
     }
-    if (trimPassword===trimPassword2) {//Comparación de contraseñas entre sí.
-        warnings += `Las contraseñas no coinciden.<br>`;
+    console.log(trimPassword +"|||" + trimPassword2);
+    if (!(trimPassword==trimPassword2)) {//Comparación de contraseñas entre sí.
+        warnings += `- Las contraseñas no coinciden.<br>`;
         enviar = true;
         password.style.border = "solid 0.2rem red";
     } else {
