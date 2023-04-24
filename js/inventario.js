@@ -29,9 +29,9 @@ let id=0;
 
   } 
 
- console.log("Hola com estas");
+ 
 btnEnviar.addEventListener("click", e => {
-    console.log("Si entra a la funcion");
+    
     e.preventDefault();
     let warnings = "";
     let agregar = false;
