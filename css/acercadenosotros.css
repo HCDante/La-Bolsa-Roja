@@ -6,6 +6,10 @@ h1{
     animation-duration: 3s;
     animation-name: slidein;
   }
+
+p{
+  text-align: justify;
+}
   
   @keyframes slidein {
     from {
