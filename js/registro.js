@@ -46,7 +46,7 @@ form.addEventListener("submit", e => {
     } else {
         tel.style.border = "solid 0.2rem green";
     }
-    if (!regexPassword.test (trimPassword) && !regexPassword.test (trimPassword2)) { //Comparación de contraseñas con expresión regular.
+    if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
         warnings += `Contraseña no válida, debe contener mínimo 6 carácteres con al menos 1 mayúscula, 1 número y 1 carácter especial.<br>`;
         enviar = true;
         password.style.border = "solid 0.2rem red";
@@ -63,7 +63,8 @@ form.addEventListener("submit", e => {
     if (enviar) {
         parrafo.innerHTML = warnings;
     } else {
-
+        let user={name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2};
+        localStorage.setItem("Users",JSON.stringify(user));
     }
 
 });
