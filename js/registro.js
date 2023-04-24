@@ -1,6 +1,6 @@
 const nombre = document.getElementById("name");
-const email = document.getElementById("email");
-const tel = document.getElementById("tel");
+const email = document.getElementById("mail");
+const tel = document.getElementById("telephone");
 const password= document.getElementById("password");
 const password2= document.getElementById("password2");
 const form = document.getElementById("form");

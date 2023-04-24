@@ -49,7 +49,7 @@
   </header>
   <br>
 
-  <div class="container-form-reg">
+  <div class="container-form-reg" id="form">
     <h2 class="text-center">Regístrate</h2>
       <form>
         <div class="input-group mb-3 ">
@@ -58,7 +58,7 @@
         </div>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText">Teléfono:</span>
-          <input type="number" placeholder="+525512345678" class="form-control" aria-label="name" id="telephone">
+          <input type="text" placeholder="+525512345678" class="form-control" aria-label="name" id="telephone">
         </div>
         <div class="input-group">
           <span class="input-group-text labelText">Email:</span>
@@ -73,7 +73,7 @@
               <div class="col-md-6">
                 <label>Contraseña</label>
                 <div class="input-group">
-                  <input ID="txtPassword" pattern=".{10,}" type="Password" Class="form-control">
+                  <input ID="txtPassword" pattern=".{10,}" type="Password" Class="form-control" id="password">
                   <div class="input-group-pswd">
                     <button id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span
                         class="fa fa-eye-slash icon"></span> </button>
@@ -83,7 +83,7 @@
               <div class="col-md-6">
                 <label>Confirmar Contraseña</label>
                 <div class="input-group">
-                  <input ID="txtPassword2" pattern=".{10,}" type="Password" Class="form-control">
+                  <input ID="txtPassword2" pattern=".{10,}" type="Password" Class="form-control" id="password2">
                   <div class="input-group-pswd2">
                     <button id="show_password2" class="btn btn-danger" type="button" onclick="mostrarPassword2()"> 
                       <span class="fa fa-eye-slash icon2"></span> </button>
@@ -93,6 +93,7 @@
               </div>
               <br>
               <button type="button" class="btn btn-danger" onclick="()">Crear cuenta</button>
+              <p class="warnings" id="warnings"></p>
             </div>
           </div>
         </form>
