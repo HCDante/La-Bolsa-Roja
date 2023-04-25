@@ -1,4 +1,12 @@
-.btn-enviar{
+.warnings{
+    width: 200px;
+      text-align: center;
+      margin: auto;
+      color: rgb(198, 51, 51);
+      padding-top: 20px;
+  }
+
+  .btn-enviar{
     margin: 0 auto;
 }
 
