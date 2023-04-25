@@ -1,0 +1,8 @@
+
+/*Bolsin responsivo*/
+@media only screen and (max-width: 767px) {
+    .svg img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
