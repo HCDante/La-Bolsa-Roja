@@ -5,7 +5,8 @@ const password= document.getElementById("txtPassword");
 const password2= document.getElementById("txtPassword2");
 const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
-
+let user=[];
+localStorage.setItem("Users", JSON.stringify(user));
 let idGlobal =0;
 
 
@@ -77,7 +78,7 @@ btn.addEventListener("click", e => {
         parrafo.innerHTML = warnings;
     } else {
         idGlobal++;
-        let user={id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2};
+        user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
         localStorage.setItem("Users",JSON.stringify(user));
     }
     borderTimeout();
