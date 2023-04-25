@@ -44,7 +44,16 @@ btn.addEventListener("click", e => {
         enviar = true;
         email.style.border = "solid 0.2rem red";
     } else {
-        email.style.border = "solid 0.2rem green";
+        user.forEach(element => {
+            if(element.mail==trimEmail ){
+                warnings += `Correo ya registrado<br>`;
+                enviar = "true";
+                email.style.border = "solid 0.2rem red";
+            }else{
+email.style.border = "solid 0.2rem green";
+}
+           
+        });
     }
     //if(tel.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
@@ -52,7 +61,16 @@ btn.addEventListener("click", e => {
         enviar = true;
         tel.style.border = "solid 0.2rem red";
     } else {
-        tel.style.border = "solid 0.2rem green";
+        user.forEach(element => {
+            if( element.telefon==trimTelef){
+                warnings += `Número ya registrado<br>`;
+                enviar = "true";
+                tel.style.border = "solid 0.2rem red";
+            }else{
+                tel.style.border = "solid 0.2rem green";
+            }
+           
+        });
     }
     if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
         warnings += `- Contraseña no válida.<br>`;
