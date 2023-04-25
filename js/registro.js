@@ -55,7 +55,7 @@ btn.addEventListener("click", e => {
         tel.style.border = "solid 0.2rem green";
     }
     if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
-        warnings += `- Contraseña no válida, debe contener mínimo 6 carácteres con al menos 1 mayúscula, 1 número y 1 carácter especial.<br>`;
+        warnings += `- Contraseña no válida.<br>`;
         enviar = true;
         password.style.border = "solid 0.2rem red";
     } else {
