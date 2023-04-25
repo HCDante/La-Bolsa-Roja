@@ -54,13 +54,15 @@ btn.addEventListener("click", e => {
     } else {
         password.style.border = "solid 0.2rem green";
     }
-    console.log(trimPassword +"|||" + trimPassword2);
-    if (!(trimPassword==trimPassword2)) {//Comparación de contraseñas entre sí.
+    
+    if (!(trimPassword==trimPassword2)|| trimPassword=="") {//Comparación de contraseñas entre sí.
         warnings += `- Las contraseñas no coinciden.<br>`;
         enviar = true;
         password.style.border = "solid 0.2rem red";
+        password2.style.border = "solid 0.2rem red";
     } else {
         password.style.border = "solid 0.2rem green";
+        password2.style.border = "solid 0.2rem green";
     }
     if (enviar) {
         parrafo.innerHTML = warnings;
@@ -68,5 +70,16 @@ btn.addEventListener("click", e => {
         let user={name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2};
         localStorage.setItem("Users",JSON.stringify(user));
     }
-
+    borderTimeout();
 });
+
+function borderTimeout(){
+    setTimeout( () => {
+        nombre.style.border = "";
+        email.style.border ="";
+        tel.style.border ="";
+        password.style.border ="";
+        password2.style.border = "";
+        parrafo.innerHTML = "";
+    },4500);
+}
