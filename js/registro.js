@@ -6,6 +6,8 @@ const password2= document.getElementById("txtPassword2");
 const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
 
+let idGlobal =0;
+
 
 btn.addEventListener("click", e => {
     e.preventDefault();
@@ -14,7 +16,7 @@ btn.addEventListener("click", e => {
     let enviar = false;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     let regexTel = /^(\(\d{3}\)|\d{3})-?\d{3}-?\d{4}$/;
-    let regexPassword = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!&$%&? "]).*$/;
+    let regexPassword = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!&$%&?@"]).*$/;
 
     parrafo.innerHTML = "";
     //Se crean variables para aplicarles trim()
@@ -61,13 +63,21 @@ btn.addEventListener("click", e => {
         password.style.border = "solid 0.2rem red";
         password2.style.border = "solid 0.2rem red";
     } else {
-        password.style.border = "solid 0.2rem green";
+
+        if((!regexPassword.test(trimPassword)) || (!regexPassword.test(trimPassword))){
+        warnings += `Las contrasenas no cumplen con los requerimientos basicos`;
+        password.style.border = "solid 0.2rem red";
+        password2.style.border = "solid 0.2rem red";
+        }else{
+            password.style.border = "solid 0.2rem green";
         password2.style.border = "solid 0.2rem green";
+        }
     }
     if (enviar) {
         parrafo.innerHTML = warnings;
     } else {
-        let user={name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2};
+        idGlobal++;
+        let user={id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2};
         localStorage.setItem("Users",JSON.stringify(user));
     }
     borderTimeout();
@@ -81,5 +91,5 @@ function borderTimeout(){
         password.style.border ="";
         password2.style.border = "";
         parrafo.innerHTML = "";
-    },4500);
+    },6000);
 }
