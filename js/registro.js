@@ -6,9 +6,13 @@ const password2= document.getElementById("txtPassword2");
 const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
 let user=[];
-localStorage.setItem("Users", JSON.stringify(user));
-let idGlobal =0;
 
+
+if (localStorage.getItem("Users") == null ) {
+    localStorage.setItem("Users",JSON.stringify(user));
+  } 
+user=JSON.parse(localStorage.getItem("Users"));
+let idGlobal;
 
 btn.addEventListener("click", e => {
     e.preventDefault();
@@ -77,7 +81,7 @@ btn.addEventListener("click", e => {
     if (enviar) {
         parrafo.innerHTML = warnings;
     } else {
-        idGlobal++;
+        idGlobal =user.length;
         user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
         localStorage.setItem("Users",JSON.stringify(user));
     }
