@@ -16,7 +16,7 @@ let idGlobal;
 
 btn.addEventListener("click", e => {
     e.preventDefault();
-    console.log("Se ingresa a la funcion");
+    console.log("Se ingresa a la función");
     let warnings = "";
     let enviar = false;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -40,38 +40,41 @@ btn.addEventListener("click", e => {
         nombre.style.border = "solid 0.2rem green";
     }
     if (!regexEmail.test(trimEmail)) {
-        warnings += `- El correo no es válido <br>`;
+        warnings += `- El Email no es válido <br>`;
         enviar = true;
         email.style.border = "solid 0.2rem red";
     } else {
-        user.forEach(element => {
-            if(element.mail==trimEmail ){
-                warnings += `Correo ya registrado<br>`;
-                enviar = "true";
-                email.style.border = "solid 0.2rem red";
-            }else{
-email.style.border = "solid 0.2rem green";
-}
-           
-        });
+        email.style.border = "solid 0.2rem green";
+        
     }
+    user.forEach(element => {
+        if(element.mail==trimEmail ){
+            warnings += `- Email ya registrado<br>`;
+            enviar = "true";
+            email.style.border = "solid 0.2rem red";
+        }else{
+
+}
+       
+    });
     //if(tel.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
         warnings += `- El número teléfonico no es válido <br>`;
         enviar = true;
         tel.style.border = "solid 0.2rem red";
     } else {
-        user.forEach(element => {
-            if( element.telefon==trimTelef){
-                warnings += `Número ya registrado<br>`;
-                enviar = "true";
-                tel.style.border = "solid 0.2rem red";
-            }else{
-                tel.style.border = "solid 0.2rem green";
-            }
-           
-        });
+        tel.style.border = "solid 0.2rem green";
     }
+    user.forEach(element => {
+        if( element.telefon==trimTelef){
+            warnings += `- Número ya registrado<br>`;
+            enviar = "true";
+            tel.style.border = "solid 0.2rem red";
+        }else{
+            
+        }
+       
+    });
     if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
         warnings += `- Contraseña no válida.<br>`;
         enviar = true;
@@ -83,16 +86,13 @@ email.style.border = "solid 0.2rem green";
     if (!(trimPassword==trimPassword2)|| trimPassword=="") {//Comparación de contraseñas entre sí.
         warnings += `- Las contraseñas no coinciden.<br>`;
         enviar = true;
-        password.style.border = "solid 0.2rem red";
         password2.style.border = "solid 0.2rem red";
     } else {
 
         if((!regexPassword.test(trimPassword)) || (!regexPassword.test(trimPassword))){
-        warnings += `Las contrasenas no cumplen con los requerimientos basicos`;
+        warnings += `- La contraseña no cumple con los requerimientos básicos`;
         password.style.border = "solid 0.2rem red";
-        password2.style.border = "solid 0.2rem red";
         }else{
-            password.style.border = "solid 0.2rem green";
         password2.style.border = "solid 0.2rem green";
         }
     }
@@ -102,6 +102,14 @@ email.style.border = "solid 0.2rem green";
         idGlobal =user.length;
         user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
         localStorage.setItem("Users",JSON.stringify(user));
+        parrafo.innerHTML =
+        `<div  class="alert alert-success d-flex align-items-center" role="alert">
+        <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+            Mensaje enviado correctamente.
+        </div>
+     </div>`;
+
     }
     borderTimeout();
 });
@@ -116,3 +124,4 @@ function borderTimeout(){
         parrafo.innerHTML = "";
     },6000);
 }
+
