@@ -1,12 +1,13 @@
-const nombre = document.getElementById("name");
-const email = document.getElementById("email");
-const teléfono = document.getElementById("teléfono");
-const mensaje = document.getElementById("mensaje");
-const form = document.getElementById("form");
-const parrafo = document.getElementById("warnings");
+let nombre = document.getElementById("name");
+let email = document.getElementById("email");
+let teléfono = document.getElementById("teléfono");
+let mensaje = document.getElementById("mensaje");
+let form = document.getElementById("form");
+let parrafo = document.getElementById("warnings");
+let btnSend = document.getElementById("btn");
 
 
-form.addEventListener("submit", e => {
+btnSend.addEventListener("click", e => {
     e.preventDefault();
     let warnings = "";
     let enviar = false;
@@ -22,32 +23,31 @@ form.addEventListener("submit", e => {
     if (trimName.length <= 2) {
         warnings += `El nombre no es válido <br>`;
         enviar = "true";
-        nombre.style.border = "solid 0.2rem red";
-
+        redBorder(nombre);
     } else {
-        nombre.style.border = "solid 0.2rem green";
+        greenBorder(nombre);
     }
     if (!regexEmail.test(trimEmail)) {
         warnings += `El correo no es válido <br>`;
         enviar = true;
-        email.style.border = "solid 0.2rem red";
+        redBorder(email);
     } else {
-        email.style.border = "solid 0.2rem green";
+        greenBorder(email);
     }
     //if(teléfono.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
         warnings += `El número teléfonico no es válido <br>`;
         enviar = true;
-        teléfono.style.border = "solid 0.2rem red";
+        redBorder(teléfono);
     } else {
-        teléfono.style.border = "solid 0.2rem green";
+        greenBorder(teléfono);
     }
     if (trimMensaje.length < 15) {
         warnings += `Mensaje muy corto<br>`;
         enviar = true;
-        mensaje.style.border = "solid 0.2rem red";
+        redBorder(mensaje);
     } else {
-        mensaje.style.border = "solid 0.2rem green";
+        greenBorder(mensaje);
     }
     if (enviar) {
         parrafo.innerHTML = warnings;
@@ -78,3 +78,11 @@ form.addEventListener("submit", e => {
     }
 
 });
+
+function greenBorder(input){
+    input.style.border = "solid 0.2rem green";
+}
+
+function redBorder(input){
+    input.style.border = "solid 0.2rem red";
+}

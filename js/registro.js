@@ -34,42 +34,40 @@ btn.addEventListener("click", e => {
     if (trimName.length <= 2) {
         warnings += `- El nombre no es válido <br>`;
         enviar = "true";
-        nombre.style.border = "solid 0.2rem red";
+        redBorder(nombre);
 
     } else {
-        nombre.style.border = "solid 0.2rem green";
+        greenBorder(nombre);
     }
     if (!regexEmail.test(trimEmail)) {
         warnings += `- El Email no es válido <br>`;
         enviar = true;
-        email.style.border = "solid 0.2rem red";
+        redBorder(email);
     } else {
-        email.style.border = "solid 0.2rem green";
-        
+        greenBorder(email);
     }
     user.forEach(element => {
         if(element.mail==trimEmail ){
             warnings += `- Email ya registrado<br>`;
             enviar = "true";
-            email.style.border = "solid 0.2rem red";
+            redBorder(email);
         }else{
 
-}
-       
+        }   
     });
     //if(tel.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
         warnings += `- El número teléfonico no es válido <br>`;
         enviar = true;
-        tel.style.border = "solid 0.2rem red";
+        redBorder(tel);
     } else {
-        tel.style.border = "solid 0.2rem green";
+        greenBorder(tel);
     }
     user.forEach(element => {
         if( element.telefon==trimTelef){
             warnings += `- Número ya registrado<br>`;
             enviar = "true";
-            tel.style.border = "solid 0.2rem red";
+            redBorder(tel);
         }else{
             
         }
@@ -78,22 +76,24 @@ btn.addEventListener("click", e => {
     if (!regexPassword.test (trimPassword) ) { //Comparación de contraseñas con expresión regular.
         warnings += `- Contraseña no válida.<br>`;
         enviar = true;
-        password.style.border = "solid 0.2rem red";
+        redBorder(password);
     } else {
-        password.style.border = "solid 0.2rem green";
+        greenBorder(password);
     }
     
     if (!(trimPassword==trimPassword2)|| trimPassword=="") {//Comparación de contraseñas entre sí.
         warnings += `- Las contraseñas no coinciden.<br>`;
         enviar = true;
-        password2.style.border = "solid 0.2rem red";
+        redBorder(password2);
+        redBorder(password);
     } else {
 
-        if((!regexPassword.test(trimPassword)) || (!regexPassword.test(trimPassword))){
-        warnings += `- La contraseña no cumple con los requerimientos básicos`;
-        password.style.border = "solid 0.2rem red";
+        if((!regexPassword.test(trimPassword)) || (!regexPassword.test(trimPassword2))){
+            warnings += `- La contraseña no cumple con los requerimientos básicos`;
+            redBorder(password);
+            redBorder(password2);
         }else{
-        password2.style.border = "solid 0.2rem green";
+            greenBorder(password2);
         }
     }
     if (enviar) {
@@ -106,7 +106,7 @@ btn.addEventListener("click", e => {
         `<div  class="alert alert-success d-flex align-items-center" role="alert">
         <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>
-            Mensaje enviado correctamente.
+            Usuario creado exitosamente.
         </div>
      </div>`;
 
@@ -123,5 +123,13 @@ function borderTimeout(){
         password2.style.border = "";
         parrafo.innerHTML = "";
     },6000);
+}
+
+function greenBorder(input){
+    input.style.border = "solid 0.2rem green";
+}
+
+function redBorder(input){
+    input.style.border = "solid 0.2rem red";
 }
 
