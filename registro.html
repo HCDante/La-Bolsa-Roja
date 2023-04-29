@@ -34,33 +34,36 @@
 
 <body>
   <header>
-    <div class="container__menu">
-      <div class="logo">
-        <a title="Bolsin" href="./index.html"><img src="./src/logo-magtimus-v2.3-1.png" alt=""></a>
-      </div>
-      <div class="menu">
-        <i class="fas fa-bars" id="btn_menu"></i>
-        <div id="back_menu"></div>
-        <nav id="nav">
-          <img src="./src/developer_activity.svg" alt="">
-          <ul>
-            <li><a href="./registro.html" id="selected">Registro</a></li>
-            <li><a href="./productos.html">Inicio de sesión</a></li>
-            <li><a href="./registro.html" class="perfil"><i class="fas fa-user"></i></a></li>
-            <li><a href="#carrito"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
-        </nav>
-      </div>
+  <div class="container__menu">
+    <div class="logo">
+      <img src="./src/logo-magtimus-v2.3-1.png" alt="">
     </div>
-  </header>
-  <br>
+    <div class="menu">
+      <i class="fas fa-bars" id="btn_menu"></i>
+      <div id="back_menu"></div>
+      <nav id="nav">
+        <img src="./src/developer_activity.svg" alt="">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="./acercadenosotros.html">Sobre Nosotros</a></li>
+          <li><a href="./comunidad.html">Comunidad</a></li>
+          <li><a href="./contacto.html">Contáctanos</a></li>
+          <li><a href="./registro.html" class="perfil" id="selected"><i class="fas fa-user"></i></a></li>
+          <li><a href="#carrito"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> 
+</header>
+  <br><br>
 
   <div class="container-form-reg" id="form">
-    <h2 class="text-center">Regístrate</h2>
+    <h2 class="text-center">Regístrate <br>o <br><a href="./productos.html">Inicia sesión</a></h2>
       <form>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText ">Nombre:</span>
-          <input type="text" placeholder="Nombres + apellidos" class="form-control" aria-label="title" id="name">
+          <input type="text" placeholder="mínimo 3 caracteres, ejemplo: Ana" class="form-control" aria-label="title" id="name">
         </div>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText">Teléfono:</span>
@@ -79,7 +82,7 @@
               <div class="col-md-6">
                 <label>Contraseña</label>
                 <div class="input-group">
-                  <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control">
+                  <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control" placeholder="mínimo 6 caracteres">
                   <div class="input-group-pswd">
                     <button id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span
                         class="fa fa-eye-slash icon"></span> </button>
@@ -97,11 +100,10 @@
                 </div>
                 </div>
               </div>
-              <p style="color: #000166;">
-                La contraseña debe contener: <br> -mínimo 6 caracteres: <br>
-                -mínimo una letra <br> -mínimo un número <br> -mínimo un carácter especial <br>
-                Caracteres especiales aceptados: 
-                !  &  $  %  &  ?  @  .  "
+              <p>
+                La contraseña debe contener:<br>
+                -mínimo una letra <br>
+                -mínimo un número
               </p>
               <br>
               <button type="button" id="button" class="btn btn-danger" >Crear cuenta</button>

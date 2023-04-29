@@ -21,7 +21,7 @@ btn.addEventListener("click", e => {
     let enviar = false;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     let regexTel = /^(\(\d{3}\)|\d{3})-?\d{3}-?\d{4}$/;
-    let regexPassword = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!&$%&?@".]).*$/;
+    let regexPassword = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d).*$/;
 
     parrafo.innerHTML = "";
     //Se crean variables para aplicarles trim()

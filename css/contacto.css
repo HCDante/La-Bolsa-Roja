@@ -16,7 +16,11 @@
 
   input{
     margin-top: 1rem;
-    width: 17rem;
+    width: 18rem;
+    border-radius: 7px;
+    height: 40px;
+    border-color: white;
+
   }
 
 

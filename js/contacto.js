@@ -36,13 +36,13 @@ btnSend.addEventListener("click", e => {
     }
     //if(teléfono.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
-        warnings += `El número teléfonico no es válido <br>`;
+        warnings += `El número telefónico no es válido <br>`;
         enviar = true;
         redBorder(teléfono);
     } else {
         greenBorder(teléfono);
     }
-    if (trimMensaje.length < 15) {
+    if (trimMensaje.length < 12) {
         warnings += `Mensaje muy corto<br>`;
         enviar = true;
         redBorder(mensaje);
