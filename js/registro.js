@@ -105,7 +105,7 @@ btn.addEventListener("click", e => {
         idGlobal =user.length;
         user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
         localStorage.setItem("Users",JSON.stringify(user));
-        localStorage.setItem("UsuarioActivo",JSON.stringify(user));
+        localStorage.setItem("UsuarioActivo",JSON.stringify({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2}));
         parrafo.innerHTML =
         `<div  class="alert alert-success d-flex align-items-center" role="alert">
         <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
