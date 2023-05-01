@@ -7,13 +7,16 @@ const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
 let user=[];
 
-
 if (localStorage.getItem("Users") == null ) {
     localStorage.setItem("Users",JSON.stringify(user));
   } 
 user=JSON.parse(localStorage.getItem("Users"));
 let idGlobal;
+if(localStorage.getItem("UsuarioActivo") != null ){
 
+    window.location.replace("../perfil.html");
+
+  }
 btn.addEventListener("click", e => {
     e.preventDefault();
     console.log("Se ingresa a la función");
@@ -102,16 +105,21 @@ btn.addEventListener("click", e => {
         idGlobal =user.length;
         user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
         localStorage.setItem("Users",JSON.stringify(user));
+        localStorage.setItem("UsuarioActivo",JSON.stringify(user));
         parrafo.innerHTML =
         `<div  class="alert alert-success d-flex align-items-center" role="alert">
         <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>
-            Usuario creado exitosamente.
+            Usuario creado exitosamente. Redirigiendo al perfil.
         </div>
      </div>`;
-
+     setTimeout(()=>{
+        window.location.replace("../perfil.html");
+        
+     },2500);
+     
     }
-    borderTimeout();
+    
 });
 
 function borderTimeout(){
