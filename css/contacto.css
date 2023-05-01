@@ -1,12 +1,22 @@
 /*Formulario*/
 
   .conformulario{
+    padding: 30px;
     background-color: #C4C4C4;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
   }
+
+  .labelText{
+    display: block;
+    background-color: lightgray;
+    border: solid 1px white;
+  }
+
+
 
   .colformulario{
     display: flex;
@@ -15,12 +25,19 @@
   }
 
   input{
-    margin-top: 1rem;
-    width: 18rem;
+    margin-top: 5px;
+    width: 22rem;
     border-radius: 7px;
     height: 40px;
     border-color: white;
 
+  }
+  textarea{
+    margin-top: 5px;
+    width: 22rem;
+    border-radius: 7px;
+    height: 65px;
+    border-color: white;
   }
 
 
@@ -38,6 +55,8 @@
     margin-left: 30px;
   }
 
+
+
   .infoa{
     font-size: 0.95rem;
     display: inline-block;
@@ -47,6 +66,9 @@
     margin-left: 30px;
     color: black;
     font-weight: 700;
+  }
+  .info-form{
+    text-align: center;
   }
 
   .infoi{
@@ -76,10 +98,95 @@
     bottom: 0;
     width: 100%;
   }
+
+  @media(max-width: 450px){
+    .info-form{
+      text-align: center;
+    }
+    .infop{
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      margin-left: 8px;
+    }
+    .infoh2{
+      margin-top: 20px;
+      margin-bottom: 15px;
+      margin-left: 8px;
+      font-size: 35px;
+      
+    } 
+    .infoa{
+      font-size: 0.95rem;
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+      margin-bottom: 15px;
+      margin-left: 1px;
+      color: black;
+      font-weight: 700;
+    }
+    input{
+      margin-top: 1rem;
+      width: max-content;
+      border-radius: 7px;
+      height: 40px;
+      border-color: white;
   
-  @media only screen and (max-width: 720px) {
+    }
+    textarea{
+      margin-top: 1rem;
+      width: max-content;
+      border-radius: 7px;
+      height: 65px;
+      border-color: white;
+    }
+  }
+  
+  @media only screen and (min-width: 451px) {
     footer{
         position: relative;
+    }
+    .info-form{
+      text-align: center;
+    }
+    .infop{
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      margin-left: 8px;
+    }
+    .infoh2{
+      margin-top: 20px;
+      margin-bottom: 15px;
+      margin-left: 8px;
+      font-size: 35px;
+      
+    } 
+    .infoa{
+      font-size: 0.95rem;
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+      margin-bottom: 15px;
+      margin-left: 1px;
+      color: black;
+      font-weight: 700;
+    }
+    input{
+      margin-top: 1rem;
+      width: 300px;
+      border-radius: 7px;
+      height: 40px;
+      border-color: white;
+  
+    }
+    textarea{
+      margin-top: 1rem;
+      width: 300px;
+      border-radius: 7px;
+      height: 65px;
+      border-color: white;
     }
   }
 
