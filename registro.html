@@ -45,7 +45,7 @@
         <ul>
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./productos.html">Productos</a></li>
-          <li><a href="./acercadenosotros.html">Sobre Nosotros</a></li>
+          <li><a href="./acercadenosotros.html">Nosotros</a></li>
           <li><a href="./comunidad.html">Comunidad</a></li>
           <li><a href="./contacto.html">Contáctanos</a></li>
           <li><a href="./registro.html" class="perfil" id="selected"><i class="fas fa-user"></i></a></li>
@@ -58,12 +58,12 @@
   <br><br>
 
   <div class="container-form-reg" id="form">
-    <h2 class="text-center"><strong>Regístrate <br>o <br><a href="./iniciarsesion.html">Inicia sesión</strong></a></h2>
+    <h2 class="text-center"><strong>Regístrate <br>o <br><a class="iniciar" href="./iniciarsesion.html">Inicia sesión</strong></a></h2>
     <br>
       <form>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText ">Nombre:</span>
-          <input type="text" placeholder="mínimo 3 caracteres, ejemplo: Ana" class="form-control" aria-label="title" id="name">
+          <input type="text" placeholder="Mínimo 3 caracteres (Ejemplo: Ana)" class="form-control" aria-label="title" id="name">
         </div>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText">Teléfono:</span>
@@ -84,7 +84,7 @@
                 <div class="input-group">
                   <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control" placeholder="mínimo 6 caracteres">
                   <div class="input-group-pswd">
-                    <button id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span
+                    <button style="position: static;" id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span style="position: static;"
                         class="fa fa-eye-slash icon"></span> </button>
                   </div>
                 </div>
@@ -94,16 +94,16 @@
                 <div class="input-group">
                   <input id="txtPassword2" pattern=".{10,}" type="Password" Class="form-control">
                   <div class="input-group-pswd2">
-                    <button id="show_password2" class="btn btn-danger" type="button" onclick="mostrarPassword2()"> 
-                      <span class="fa fa-eye-slash icon2"></span> </button>
+                    <button style="position: static;" id="show_password2" class="btn btn-danger" type="button" onclick="mostrarPassword2()"> 
+                      <span style="position: static;" class="fa fa-eye-slash icon2"></span> </button>
                   </div>
                 </div>
                 </div>
               </div>
               <p>
                 La contraseña debe contener:<br>
-                -mínimo una letra <br>
-                -mínimo un número
+                - Mínimo una letra <br>
+                - Mínimo un número
               </p>
               <br>
               <button type="button" id="button" class="btn btn-danger" >Crear cuenta</button>
