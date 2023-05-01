@@ -9,6 +9,9 @@ h1{
 
 p{
   text-align: justify;
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
 }
   
   @keyframes slidein {
