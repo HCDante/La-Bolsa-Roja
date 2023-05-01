@@ -7,7 +7,16 @@ let parrafo = document.getElementById("warnings");
 let btnSend = document.getElementById("btn");
 
 
+//warnins para cada input:
+let warningName = document.getElementById("warningName");
+let warningEmail = document.getElementById("warningEmail");
+let warningPhone = document.getElementById("warningPhone");
+let warningMessage = document.getElementById("warningMessage");
+
+
+
 btnSend.addEventListener("click", e => {
+    clearWarnings();
     e.preventDefault();
     let warnings = "";
     let enviar = false;
@@ -21,14 +30,16 @@ btnSend.addEventListener("click", e => {
     let trimMensaje = mensaje.value.trim();
 
     if (trimName.length <= 2) {
-        warnings += `El nombre no es válido <br>`;
+        //warnings += `El nombre no es válido <br>`;
+        warningName.innerText = `El nombre no es válido`;
         enviar = "true";
         redBorder(nombre);
     } else {
         greenBorder(nombre);
     }
     if (!regexEmail.test(trimEmail)) {
-        warnings += `El correo no es válido <br>`;
+        //warnings += `El correo no es válido <br>`;
+        warningEmail.innerText = `El correo no es válido`;
         enviar = true;
         redBorder(email);
     } else {
@@ -36,31 +47,35 @@ btnSend.addEventListener("click", e => {
     }
     //if(teléfono.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
-        warnings += `El número telefónico no es válido <br>`;
+        //warnings += `El número telefónico no es válido <br>`;
+        warningPhone.innerText  = `El número telefónico no es válido`;
+        warningPhone.
         enviar = true;
         redBorder(teléfono);
     } else {
         greenBorder(teléfono);
     }
-    if (trimMensaje.length < 12) {
-        warnings += `Mensaje muy corto<br>`;
+    if (trimMensaje.length < 7) {
+       // warnings += `Mensaje muy corto<br>`;
+       warningMessage.innerText = "Mensaje muy corto";
         enviar = true;
         redBorder(mensaje);
     } else {
         greenBorder(mensaje);
     }
     if (enviar) {
+        
         parrafo.innerHTML = warnings;
     } else {
-        let ebody = `
-    <h1>Nombre: </h1>${trimName}
-    <br>
-    <h1>Correo: </h1>${trimEmail}
-    <br>
-    <h1>Telefono: </h1>${trimTelef}
-    <br>
-    <h1>Mensaje: </h1>${trimMensaje}
-    `;
+        
+            let ebody = `
+        <h1>Nombre: </h1>${trimName}
+        <br>
+        <h1>Correo: </h1>${trimEmail}
+        <br>
+        <h1>Telefono: </h1>${trimTelef}
+        <br>
+        <h1>Mensaje: </h1>${trimMensaje}`;
         Email.send({
             SecureToken: "2beb6908-098a-4ce9-8217-645950d7272e",
             To: 'javadabbado@gmail.com',
@@ -75,9 +90,40 @@ btnSend.addEventListener("click", e => {
                 Mensaje enviado correctamente.
             </div>
          </div>`;
+
+         borderTimeoutSuccess();
     }
+    
 
 });
+
+function clearWarnings(){
+    warningEmail.innerText="";
+    warningMessage.innerText="";
+    warningName.innerText="";
+    warningPhone.innerText="";
+}
+
+function borderTimeoutSuccess(){
+    setTimeout( () => {
+        //borrar bordes de colores
+        nombre.style.border = "";
+        email.style.border ="";
+        teléfono.style.border ="";
+        mensaje.style.border ="";
+
+        nombre.value ="";
+        email.value= "";
+        teléfono.value = "";
+        mensaje.value = "";
+
+        //borrar warnings
+        warningEmail.innerText="";
+        warningMessage.innerText="";
+        warningName.innerText="";
+        warningPhone.innerText="";
+    },5000);
+}
 
 function greenBorder(input){
     input.style.border = "solid 0.2rem green";

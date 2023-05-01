@@ -66,31 +66,36 @@
               <p class="infop">Déjanos tu información y nos pondremos en contacto.</p>
               <a href="#" class="infoa"><i class="fa fa-phone infoi"></i> 55 8049 2135</a>
               <a href="#" class="infoa"><i class="fa fa-envelope infoi"></i> bolsas.labolsaroja@gmail.com</a>
-              <div style="text-align: center; margin-bottom: 2rem; margin-top: 2rem;">
+              <div style="text-align: center; margin-bottom: 2rem; margin-top: 2rem; margin-left: 5px;">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1484439950464!2d-99.14132052633593!3d19.405991141533207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fee6dd69b067%3A0xbda7c2e78df835cd!2sCalle%20Bernardo%20Couto%2034%2C%20Algar%C3%ADn%2C%20Cuauht%C3%A9moc%2C%2006880%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1682006545506!5m2!1ses!2smx" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             </div>
           </div>
           
-          <div class="col colformulario">
+          <div class="col colformulario" id="fomulario">
             <form action="" method="POST" id="form">
               <div class="mb-3">
-                <label for=""><strong>Nombre</strong></label><br>
-                <input class="formulario" type="text" name="" placeholder="&#160; mínimo 3 caracteres, ejemplo: Ana" class="campo" id="name">
+                <span class="input-group-text labelText"><strong>Nombre:</strong></span>
+                <input class="formulario" type="text" name="" placeholder="&#160; Mínimo 3 caracteres, ejemplo: Ana" class="campo" id="name">
+                <p id="warningName" class="warnings"></p>
               </div>
               <div class="mb-3">
-                <label for=""><strong>Correo electrónico</strong></label><br>
-                <input class="formulario" type="text" name="" placeholder="&#160;ejemplo@gmail.com" class="campo"
+                
+                <span class="input-group-text labelText"><strong>Correo electrónico:</strong></span>
+                <input class="formulario" type="text" name="" placeholder="&#160;Ejemplo@gmail.com" class="campo"
                   id="email">
+                  <p id="warningEmail" class="warnings"></p>
               </div>
               <div class="mb-3">
-                <label for=""><strong>Teléfono</strong></label><br>
+                <span class="input-group-text labelText"><strong>Teléfono:</strong></span>
                 <input class="formulario" type="teléfono" name="" placeholder="&#160;10 dígitos, ejemplo: 5512345678" class="campo" id="teléfono">
+                <p id="warningPhone" class="warnings"></p>
               </div>
               <div class="mb-3">
-                <label for=""><strong>Mensaje</strong></label><br>
-                <input class="formulario" type="mensaje" name="" placeholder="&#160;mínimo 12 caracteres, deja tu mensaje" class="campo"
-                  id="mensaje">
+                <span class="input-group-text labelText"><strong>Mensaje:</strong></span>
+                  <textarea class="formulario" type="mensaje" name="" placeholder="&#160;Mínimo 12 caracteres, deja tu mensaje" class="campo"
+                  id="mensaje"></textarea>
+                  <p id="warningMessage" class="warnings"></p>
               </div>
               <div class="mb-3">
                 <button class="btn btn-danger " id="btn" type="submit">Enviar</button>

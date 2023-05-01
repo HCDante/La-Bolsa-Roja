@@ -1,85 +1,193 @@
 /*Formulario*/
+  
+.conformulario{
+  padding: 30px;
+  background-color: #C4C4C4;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
 
-  .conformulario{
-    background-color: #C4C4C4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+.labelText{
+  display: block;
+  background-color: #C4C4C4;
+  border: solid #C4C4C4;
+ /* border: solid 1px white; */
+}
+
+
+
+.colformulario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  margin-top: 5px;
+  width: 22rem;
+  border-radius: 7px;
+  height: 40px;
+  border-color: white;
+
+}
+textarea{
+  margin-top: 5px;
+  width: 22rem;
+  border-radius: 7px;
+  height: 65px;
+  border-color: white;
+}
+
+
+.infoh2{
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  font-size: 35px
+} 
+
+.infop{
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+
+
+.infoa{
+  font-size: 0.95rem;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  color: black;
+  font-weight: 700;
+}
+.info-form{
+  text-align: center;
+}
+
+.infoi{
+  color: #A82112;
+  margin-right: 10px;
+}
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: rgb(198, 51, 51);
+    padding-top: 5px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+footer{
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@media(max-width: 450px){
+  .info-form{
+    text-align: center;
   }
-
-  .colformulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  input{
-    margin-top: 1rem;
-    width: 18rem;
-    border-radius: 7px;
-    height: 40px;
-    border-color: white;
-
-  }
-
-
-  .infoh2{
-    margin-top: 30px;
-    margin-bottom: 15px;
-    margin-left: 30px;
-    font-size: 35px
-  } 
-
   .infop{
     font-size: 17px;
     line-height: 1.6;
     margin-bottom: 15px;
-    margin-left: 30px;
+    margin-left: 8px;
   }
-
+  .infoh2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    font-size: 35px;
+    
+  } 
   .infoa{
     font-size: 0.95rem;
     display: inline-block;
     text-decoration: none;
     width: 100%;
     margin-bottom: 15px;
-    margin-left: 30px;
+    margin-left: 1px;
     color: black;
     font-weight: 700;
   }
+  input{
+    margin-top: 1rem;
+    width: max-content;
+    border-radius: 7px;
+    height: 40px;
+    border-color: white;
 
-  .infoi{
-    color: #A82112;
-    margin-right: 10px;
   }
+  textarea{
+    margin-top: 1rem;
+    width: max-content;
+    border-radius: 7px;
+    height: 65px;
+    border-color: white;
+  }
+}
 
-.warnings{
-    width: 200px;
-      text-align: center;
-      margin: auto;
-      color: rgb(198, 51, 51);
-      padding-top: 20px;
-  }
-
-  body {
-    position: relative;
-    min-height: 100vh;
-  }
-  
+@media only screen and (min-width: 451px) {
   footer{
-    background-color: #f2f2f2;
-    padding: 20px;
+      position: relative;
+  }
+  .info-form{
     text-align: center;
-    position: relative;
-    left: 0;
-    bottom: 0;
+  }
+  .infop{
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    margin-left: 8px;
+  }
+  .infoh2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    font-size: 35px;
+    
+  } 
+  .infoa{
+    font-size: 0.95rem;
+    display: inline-block;
+    text-decoration: none;
     width: 100%;
+    margin-bottom: 15px;
+    margin-left: 1px;
+    color: black;
+    font-weight: 700;
   }
-  
-  @media only screen and (max-width: 720px) {
-    footer{
-        position: relative;
-    }
+  input{
+    margin-top: 1rem;
+    width: 300px;
+    border-radius: 7px;
+    height: 40px;
+    border-color: white;
+
   }
+  textarea{
+    margin-top: 1rem;
+    width: 300px;
+    border-radius: 7px;
+    height: 65px;
+    border-color: white;
+  }
+}
 
