@@ -49,7 +49,6 @@ btnSend.addEventListener("click", e => {
     if (!regexTel.test(trimTelef)||trimTelef==0) {
         //warnings += `El número telefónico no es válido <br>`;
         warningPhone.innerText  = `El número telefónico no es válido`;
-        warningPhone.
         enviar = true;
         redBorder(teléfono);
     } else {
