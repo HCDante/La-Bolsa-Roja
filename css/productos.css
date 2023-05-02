@@ -1,5 +1,6 @@
 .container-cards{
     background-color: lightgray;
+    border-radius: 20px;
 }
 
 .card-image{
@@ -7,6 +8,7 @@
     width: 14rem;
     margin: 0 auto;
     margin-top: 1rem;
+    border-radius: 10px;
 }
 
 .cards-div  {
