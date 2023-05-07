@@ -14,11 +14,12 @@
     display: none;
 }
 .container-form-is{
-    max-width: 700px;
+	max-width: 700px;
     margin: 0 auto;
     padding: 25px;
-    background-color: lightgray;
     border-radius: 50px;
+    border-style: solid;
+    border-color: #cb3234;  
 }
 .labelText{
     width: 180px;
@@ -69,7 +70,7 @@
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
+	border-radius: 50px;
 	background: #fff;
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
@@ -97,3 +98,15 @@ transition: opacity 400ms ease-in;
 	box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
+
+
+
+.ojo{
+    color: #cb3234;
+    border-radius: 20px;
+}
+
+span.labelText{
+    background-color:#ffffff;
+    border-radius: 50px;
+}

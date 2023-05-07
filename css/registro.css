@@ -1,9 +1,8 @@
 .warnings{
-    width: 200px;
+    width: 60%;
       text-align: center;
       margin: auto;
-      color: rgb(198, 51, 51);
-      padding-top: 20px;
+      border-radius: 15px;
   }
 
   .btn-enviar{
@@ -14,11 +13,12 @@
     display: none;
 }
 .container-form-reg{
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 25px;
-    background-color: lightgray;
     border-radius: 50px;
+    border-style: solid;
+    border-color: #cb3234;  
 }
 .labelText{
     width: 180px;
@@ -45,10 +45,26 @@
     
 }
 
+.btn{
+    color: #cb3234;
+    border-radius: 20px;
+}
+
+span.labelText{
+    background-color:#ffffff;
+    border-radius: 50px;
+}
+
+
 .iniciar{
-    color: rgb(198, 51, 51);
+    color: #cb3234;
 }
 
 .iniciar:hover{
     color: black;
+}
+
+.enviar{
+    width: 40%;
+    margin-left: 30%;
 }

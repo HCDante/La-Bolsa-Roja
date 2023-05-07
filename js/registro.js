@@ -60,7 +60,7 @@ btn.addEventListener("click", e => {
     });
     //if(tel.value.length <10)
     if (!regexTel.test(trimTelef)||trimTelef==0) {
-        warnings += `- El número teléfonico no es válido <br>`;
+        warnings += `- El número telefónico no es válido <br>`;
         enviar = true;
         redBorder(tel);
     } else {

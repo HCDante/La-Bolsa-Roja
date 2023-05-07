@@ -56,10 +56,9 @@
   </div> 
 </header>
   <br><br>
-
+  <h1 class="text-center"><strong>Regístrate o <a class="iniciar" href="./iniciarsesion.html">Inicia sesión</strong></a></h1>
+  <br>
   <div class="container-form-reg" id="form">
-    <h2 class="text-center"><strong>Regístrate <br>o <br><a class="iniciar" href="./iniciarsesion.html">Inicia sesión</strong></a></h2>
-    <br>
       <form>
         <div class="input-group mb-3 ">
           <span class="input-group-text labelText ">Nombre:</span>
@@ -84,7 +83,7 @@
                 <div class="input-group">
                   <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control" placeholder="Mínimo 6 caracteres">
                   <div class="input-group-pswd">
-                    <button style="position: static;" id="show_password" class="btn btn-danger" type="button" onclick="mostrarPassword()"> <span style="position: static;"
+                    <button style="position: static;" id="show_password" class="btn" type="button" onclick="mostrarPassword()"> <span style="position: static;"
                         class="fa fa-eye-slash icon"></span> </button>
                   </div>
                 </div>
@@ -94,7 +93,7 @@
                 <div class="input-group">
                   <input id="txtPassword2" pattern=".{10,}" type="Password" Class="form-control">
                   <div class="input-group-pswd2">
-                    <button style="position: static;" id="show_password2" class="btn btn-danger" type="button" onclick="mostrarPassword2()"> 
+                    <button style="position: static;" id="show_password2" class="btn" type="button" onclick="mostrarPassword2()"> 
                       <span style="position: static;" class="fa fa-eye-slash icon2"></span> </button>
                   </div>
                 </div>
@@ -106,8 +105,9 @@
                 - Mínimo un número
               </p>
               <br>
-              <button type="button" id="button" class="btn btn-danger" >Crear cuenta</button>
-              <p class="warnings" id="warnings"></p>
+              <button type="button" id="button" class="btn btn-danger enviar" >Crear cuenta</button>
+              <br><br>
+              <p class="warnings alert-danger" id="warnings"></p>
             </div>
           </div>
         </form>
