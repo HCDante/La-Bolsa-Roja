@@ -6,11 +6,53 @@ const imagen = document.getElementById("image");
 const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 const btnEnviar = document.getElementById("btn-enviar");
+const btnQuitar = document.getElementById("btn-quitar");
+let Tabla = document.getElementById("Inventario");
+let imgBase64="";
 
 //form.addEventListener("submit", e => { e.preventDefault()});
 
 let inventario;
 let id=0;
+
+
+
+let fileImage = document.getElementById('fileImage');
+let btnFake = document.getElementById('btnFake');
+let imageFile = document.getElementById('imageFile');
+
+btnFake.addEventListener('click', function(){
+    fileImage.click();
+});
+fileImage.addEventListener('change', function(){
+    previewFile('imageFile', 'fileImage', 'inputFile' )
+    //previewFile(id imagen, input type file , textArea);
+});
+
+console.log(fileImage);
+
+    //previewFile(id imagen, input type file , textArea);
+    function previewFile(img, inputFile, input) {
+        
+        var preview = document.getElementById(img);
+        var file    = document.getElementById(inputFile).files[0];
+        var reader  = new FileReader();
+
+        reader.onload = function(e) {
+            imgBase64 = e.target.result;
+            console.log(imgBase64);
+            parrafo.innerHTML = "Imagen cargada correctamente"; // aquí puedes hacer lo que quieras con la representación en base64 de la imagen
+          }
+        reader.addEventListener("load", function () {
+            document.getElementById(input).value = reader.result;
+              preview.src = reader.result;      
+                        }, false);
+        
+          if (file) {
+            reader.readAsDataURL(file);
+          }// file
+    }// previewFile 
+
 
 
   if (localStorage.getItem("productos") == null){
@@ -28,7 +70,66 @@ let id=0;
     inventario=JSON.parse(localStorage.getItem("productos"));
 
   } 
+//
+inventario.forEach(element => {
+    let html=`
+    <tr>
+              <td>${element.id}</td>
+              <td><img  src=${element.image} width="100 px" height="75 px"></td>
+              <td>${element.title}</td>
+              <td>${element.description}</td>
+              <td>${element.price}</td>
+              <td>${element.inventary}</td>
+              <td><button type="button" onclick="quitarProducto(${element.id})" id="btn-quitar${element.id}" class="btn btn-danger">Quitar</button></td>
+            </tr>        
+    `;    
+    Tabla.insertAdjacentHTML("beforeend", html);
+});
 
+function actualizarTabla() {
+    while (Tabla.firstChild) {
+        Tabla.removeChild(Tabla.firstChild);
+    }
+
+    inventario.forEach((element,index) => {
+        let html=`
+        <tr>
+                  <td>${element.id}</td>
+                  <td><img  src=${element.image} width="100 px" height="75 px"></td>
+                  <td>${element.title}</td>
+                  <td>${element.description}</td>
+                  <td>${element.price}</td>
+                  <td>${element.inventary}</td>
+                  <td><button type="button" onclick="quitarProducto(${element.id})" id="btn-quitar${element.index}" class="btn btn-danger">Quitar</button></td>
+                </tr>        
+        `;    
+        Tabla.insertAdjacentHTML("beforeend", html);
+        localStorage.setItem("productos",JSON.stringify(inventario));
+        
+    });
+    
+}
+
+
+function quitarProducto(index) {
+    // Eliminar el producto del inventario
+    
+    inventario.forEach((element,indx)=>{
+        if(element.id==index){
+            inventario.splice(indx, 1);
+            actualizarTabla();
+        }
+    }
+        );
+    
+   
+    
+    
+    // Actualizar la tabla de inventario
+ 
+}
+
+//
  
 btnEnviar.addEventListener("click", e => {
     
@@ -42,7 +143,8 @@ btnEnviar.addEventListener("click", e => {
     let trimName = nombre.value.trim();
     let trimDescription = descripcion.value.trim();
     let trimPrice = precio.value.trim();
-    let trimImage = imagen.value.trim();
+    let trimImage = imgBase64;
+    console.log(imgBase64);
 
     if (trimName.length <= 2) {
         warnings += `El nombre no es válido <br>`;
@@ -66,15 +168,6 @@ btnEnviar.addEventListener("click", e => {
     } else {
         precio.style.border = "solid 0.15rem green";
     }
-    // Seccion para validar si un imagen fue subida !!!!PENDIENTE!!!!
-    if (trimImage < 5) {
-        warnings += `No se ha seleccionado alguna imagen <br>`;
-        agregar = "true";
-        imagen.style.border = "solid 0.15rem red";
-
-    } else {
-        imagen.style.border = "solid 0.15rem green";
-    }
     if (agregar) {
         parrafo.innerHTML = warnings;
     } else {
@@ -87,6 +180,7 @@ btnEnviar.addEventListener("click", e => {
                 Producto agregado correctamente.
             </div>
         </div>`;
+        actualizarTabla();
     }
     borderTimeout();
 
@@ -98,18 +192,13 @@ function borderTimeout(){
         nombre.style.border = "";
         descripcion.style.border ="";
         precio.style.border ="";
-        imagen.style.border ="";
+        
     },1500);
 }
 
   
 
 function agregarProducto(title, price, description, image) {
-    // let title = document.getElementById("title").value;
-    // let price = Number(document.getElementById("price").value);
-    // let description = document.getElementById("description").value;
-    // let image = document.getElementById("image").value;
-    
 
       if (title !== "" && price !== "") {
       id = inventario.length+1;
@@ -120,93 +209,8 @@ function agregarProducto(title, price, description, image) {
         document.getElementById("name").value = "";
         document.getElementById("price").value = "";
         document.getElementById("description").value = "";
-        document.getElementById("image").value = "";
+        imgBase64 = "";
     }
 
     
 }
-
-/* 
-
-
-
-let inventario=[{"id":1,
-"title":"Caja 1",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/27.jpeg"},
-{"id":2,
-"title":"Caja 2",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/26.jpeg"},
-{"id":3,
-"title":"Caja 3",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/25.jpeg"},
-{"id":4,
-"title":"Caja 4",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/24.jpeg"},
-{"id":5,
-"title":"Caja 5",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/23.jpeg"},
-{"id":6,
-"title":"Caja 6",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/22.jpeg"},
-{"id":7,
-"title":"Caja 7",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/21.jpeg"},
-{"id":8,
-"title":"Caja 8",
-"price":50,
-"description":"Caja perfecta para accesorios diversos",
-"image":"../src/productos/20.jpeg"},
-{"id":9,
-"title":"Bolsa 9",
-"price":50,
-"description":"Bolsa perfecta para accesorios diversos",
-"image":"../src/productos/9.jpeg"},
-{"id":10,
-"title":"Bolsa 10",
-"price":50,
-"description":"Bolsa perfecta para accesorios diversos",
-"image":"../src/productos/10.jpeg"}]
-
-
-let id = inventario.length+1;
-
-function agregarProducto() {
-    let title = document.getElementById("title").value;
-    let price = Number(document.getElementById("price").value);
-    let description = document.getElementById("description").value;
-    let image = '../src/productos/'+document.getElementById("image").value;
-    
-    
-
-    if (title !== "" && price !== "") {
-      
-       
-        inventario.push({id:id,title: title, price: price, description: description, image: image});
-
-        
-        document.getElementById("title").value = "";
-        document.getElementById("price").value = "";
-        document.getElementById("description").value = "";
-        document.getElementById("image").value = "";
-    }
-}
-
-
-
-
-
- */

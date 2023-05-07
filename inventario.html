@@ -77,20 +77,15 @@
       </div>
       <div class="prueba ">Seleccionar Imagen:</div>
       <div class="input-group mb-3 ">
-        <span class="input-group-text labelText ">Imagen:</span>
-        <input type="text" class="form-control" aria-label="title" id="image">
+        
+        <input type="button" class="form-control btn-primary" value="Subir imagen" id="btnFake"> 
+        <input type="file" class="form-control-file" id="fileImage" style="display:none">
       </div>
       <button type="button" id="btn-enviar" class="btn btn-danger">Agregar</button>
       <p id="warnings"></p>
     </form>
     <br>
     
-  </div>
- 
-  <br>
-  <br>
-  <br>
-  <br>
 
   <section>
     <div class="barra-nav">
@@ -99,6 +94,27 @@
       <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
     </div>
   </section>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th></th>
+          <th>Artículo</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Inventario</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="Inventario">
+            
+      </tbody>
+    </table>
+  </div>
+
+
 
   <footer class="text-center text-white" style="background-color: #f1f1f1;">
     <!-- Grid container -->
