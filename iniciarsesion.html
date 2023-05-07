@@ -79,7 +79,7 @@
         <br>
               <button type="button" id="button1" class="btn btn-danger" >Iniciar sesión</button>
               <button type="button" id="button2" class="btn btn-danger" href="#openModal" >
-                <a href="#openModal" style="color: white">Recuperar contraseña</a>
+                <a href="#openModal" data-bs-toggle="modal" style="color: white">Recuperar contraseña</a>
               </button>
               <p class="warnings" id="warnings"></p>
       </form>
@@ -89,32 +89,37 @@
   <br>
   <br>
   
+
+    
+  <div class="modal" tabindex="-1" id="openModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Recuperar contraseña</h5>
+    
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingresa tu correo registrado:</p>
+          <div class="input-group">
+            
+            <input type="text" placeholder="example@gmail.com" textarea class="form-control" aria-label="mail2"
+              id="mail2"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="button3" class="btn btn-danger" data-target="#pwdModal" data-toggle="modal" >Enviar</button>
+          <p class="warnings" id="warningsRecuperar"></p>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
-  <div id="openModal" class="modalDialog"> 
-    
-      
-     <div class="container-form-is" id="form">
-      <a href="#close" title="Cerrar" class="close">X</a>
-    <h2 class="text-center"><strong>Recuperar contraseña</strong></a></h2>
-      <p>Ingresa tu correo registrado:</p>
-        <div class="input-group">
-          
-          <input type="text" placeholder="example@gmail.com" textarea class="form-control" aria-label="mail2"
-            id="mail2"></textarea>
-        </div>
-        <br>
-
-        <br>
-              <button type="button" id="button3" class="btn btn-danger" data-target="#pwdModal" data-toggle="modal" >Enviar</button>
-              <p class="warnings" id="warningsRecuperar"></p>
-      
-      <br>
-  </div>
+  
 
     
     
-  </div>
 
 
   <br>
