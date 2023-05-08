@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/productos.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/btn.css">
     <!-- Icono de bootstrap para el formulario  -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" viewBox="0 0 16 16">
@@ -29,10 +30,9 @@
                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
         </symbol>
     </svg>
-
+    <link rel="stylesheet" href="./css/carrito.css">
     <title>Carrito</title>
 </head>
-
 <body>
     <header>
         <div class="container__menu">
@@ -51,24 +51,19 @@
                         <li><a href="./comunidad.html">Comunidad</a></li>
                         <li><a href="./contacto.html">Contáctanos</a></li>
                         <li><a href="./registro.html" class="perfil"><i class="fas fa-user"></i></a></li>
-                        <li><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li><a href="./carrito.html" id="selected"><i class="fas fa-shopping-cart"></i></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     <br>
-
-
     <section>
-        <div class="barra-nav">
-            <a href="./index.html"><i class="fas fa-home"></i></a>
-            <a href="./registro.html" class="perfil"><i class="fas fa-user"></i></a>
-            <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
-        </div>
+        <h1 id="texto-maquina" style="text-align: center; margin-top: 50px;">Carrito de compras</h1>
     </section>
+    <br>
+    <br>
     <div class="container-form-inv ">
-        <h2>Carrito</h2>
         <form action="" method="POST" id="form">
             <div class="container">
                 <table class="table">
@@ -91,15 +86,24 @@
                         <td><button type="button" id="btn-pagar" class="btn btn-danger">Confirmar Pedido</button></td>
                     </tr>
                 </table>
-
             </div>
-
-
         </form>
-
     </div>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
+    <section>
+        <div class="barra-nav">
+            <a href="./index.html"><i class="fas fa-home"></i></a>
+            <a href="./registro.html" class="perfil"><i class="fas fa-user"></i></a>
+            <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </section>
 
     <footer class="text-center text-white" style="background-color: #f1f1f1;">
         <!-- Grid container -->

@@ -87,3 +87,20 @@ function quitarProducto(index) {
     }
     );
 }
+
+// Obtener el elemento del texto
+var textoElemento = document.getElementById('texto-maquina');
+// Obtener el texto
+var texto = textoElemento.innerHTML;
+// Vaciar el contenido del elemento
+textoElemento.innerHTML = '';
+
+// Recorrer el texto y agregar cada letra con un retraso
+for (var i = 0; i < texto.length; i++) {
+  (function(i) {
+    setTimeout(function() {
+      textoElemento.innerHTML += texto.charAt(i);
+    }, 75 * i); // El retraso en milisegundos entre cada letra
+  })(i);
+}
+
