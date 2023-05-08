@@ -14,7 +14,6 @@ if (localStorage.getItem("productos") == null && cardGroup[0].childElementCount 
                         <img  src=${element.image} class="card-img-top card-image">
                             <div class="card-body">
                                 <h5 class="card-title">${element.title}</h5>
-                                <p class ="card-text">${element.description}</p>
                                 <button type="button" class="btn btn-danger">Ver ítem</button>
                             </div>
                     </div> </div>
