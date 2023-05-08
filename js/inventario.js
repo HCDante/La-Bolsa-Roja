@@ -6,7 +6,6 @@ const imagen = document.getElementById("image");
 const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 const btnEnviar = document.getElementById("btn-enviar");
-const btnQuitar = document.getElementById("btn-quitar");
 let Tabla = document.getElementById("Inventario");
 let imgBase64 = "";
 let inventario;
@@ -70,7 +69,7 @@ function actualizarTabla() {
                   <td>${element.description}</td>
                   <td>${element.price}</td>
                   <td>${element.inventary}</td>
-                  <td><button type="button" onclick="quitarProducto(${element.id})" id="btn-quitar${element.index}" class="btn btn-danger">Quitar</button></td>
+                  <td><button type="button" onclick="quitarProducto(${element.id})" class="btn btn-danger">Quitar</button></td>
                 </tr>        
         `;
         Tabla.insertAdjacentHTML("beforeend", html);
