@@ -1,23 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;800;900&family=Konkhmer+Sleokchher&family=Roboto&display=swap');
 
 /*NAVEGACIÓN------------------------------------------------------------------------------*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 header{
     background: #ffffff;
+    padding: 20px;
     width: 100%;
-    margin-top: 20px;
+    height: 80px;
+    margin-top: 40px;
     position: relative;
     z-index: 1;
-    border-bottom-style:solid ;
-    border-bottom-color: #cb3234;
-    border-width: 100%;
-    font-family: 'Konkhmer Sleokchher', cursive;
 }
 
 .container__menu{
@@ -35,15 +33,13 @@ header{
 }
 
 .logo img{
-    width: 150px;
-    margin-bottom: 15%;
+    width: 160px;
 
 }
 
 .menu{
     display: flex;
     align-items: center;
-    margin-top: 1%;
 }
 
 .menu ul{
@@ -63,9 +59,9 @@ header{
 }
 
 #selected{
-  border-style: solid;
-    border-color: #cb3234;
-    padding: 8px 35px;
+    background: rgb(191, 64, 17);
+    color: #fff;
+    padding: 10px 40px;
     border-radius: 50px;
 }
 
@@ -118,8 +114,4 @@ header{
     .barra-nav .perfil {
       margin: 0 auto;
     }
-  }
-
-  body{
-    font-family: 'Roboto', sans-serif;
   }

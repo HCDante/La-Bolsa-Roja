@@ -18,7 +18,7 @@
     padding: 25px;
     border-radius: 50px;
     border-style: solid;
-    border-color: #cb3234;  
+    border-color: rgb(191, 64, 17);  
 }
 .labelText{
     width: 180px;
@@ -46,7 +46,7 @@
 }
 
 .btn{
-    color: #cb3234;
+    color: rgb(191, 64, 17);
     border-radius: 20px;
 }
 
@@ -57,7 +57,7 @@ span.labelText{
 
 
 .iniciar{
-    color: #cb3234;
+    color: rgb(191, 64, 17);
 }
 
 .iniciar:hover{
