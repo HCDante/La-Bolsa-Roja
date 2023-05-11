@@ -62,3 +62,17 @@ p{
   align-items: center;
   justify-content: center;
 }
+
+/* Cards de Misión y visión */
+
+.cardacerca{
+  margin-top: 1rem;
+  color: rgb(191, 64, 17);
+  font-size: 5rem;
+}
+
+.centrar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
