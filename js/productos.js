@@ -4,30 +4,26 @@ let carrito=[];
 let cantidad;
 
 function agregarAlCarrito(idk) {
-  if (localStorage.getItem("carrito") == null) {
-    
-      let id = productos[idk].id - 1;
-      let title = productos[idk].title;
-      let price= productos[idk].price;
-      let image = productos[id].image;
-      let cantidad = document.getElementById(`cantidad${idk}`)
-      localStorage.setItem("carrito",JSON.stringify([{id: id, title: title, price: price,inventary:cantidad.value, image: image }]));
-      carrito = JSON.parse(localStorage.getItem("carrito"));
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-
-  }else{ 
-  carrito = JSON.parse(localStorage.getItem("carrito"));
-  
   let id = productos[idk].id - 1;
   let title = productos[idk].title;
-  let price= productos[idk].price;
+  let price = productos[idk].price;
   let image = productos[id].image;
-  let cantidad = document.getElementById(`cantidad${idk}`)
-  cantidad.value
-  carrito.push({ id: id, title: title, price: price,inventary:cantidad.value, image: image });
-  localStorage.setItem("carrito",JSON.stringify(carrito));
+  let cantidad = document.getElementById(`cantidad${idk}`).value;
+
+  // Verificar si el producto ya existe en el carrito
+  let productoExistente = carrito.find(p => p.id === id);
+  if (productoExistente) {
+    productoExistente.inventary = parseInt(productoExistente.inventary) + parseInt(cantidad);
+  } else {
+    // Agregar el nuevo producto al carrito
+    carrito.push({ id: id, title: title, price: price, inventary: cantidad, image: image });
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-}
+
 
 if (localStorage.getItem("productos") == null && cardGroup[0].childElementCount === 0) {
   /* let promesa= */fetch('./js/productos.json')
