@@ -9,6 +9,7 @@ h1{
 
 p{
   text-align: justify;
+  font-size: large;
   animation-duration: 2s;
   animation-name: slidein;
   animation-iteration-count: initial;
@@ -41,7 +42,7 @@ p{
 }
 
 .titulocon{
-  font-size: 50px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
