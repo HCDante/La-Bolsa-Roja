@@ -11,6 +11,11 @@ const parrafo2 = document.getElementById("warningsRecuperar");
 
 
 if (localStorage.getItem("Users") == null) {
+    let user=[{"id":0,
+    "name":"test",
+    "mail":"test@test.test",
+    "telefon":"5512345678",
+    "pass":"T35T"}];
     localStorage.setItem("Users", JSON.stringify(user));
 }
 user = JSON.parse(localStorage.getItem("Users"));

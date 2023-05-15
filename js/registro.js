@@ -5,9 +5,14 @@ const password= document.getElementById("txtPassword");
 const password2= document.getElementById("txtPassword2");
 const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
-let user=[];
+
 
 if (localStorage.getItem("Users") == null ) {
+    let user=[{"id":0,
+    "name":"test",
+    "mail":"test@test.test",
+    "telefon":"5512345678",
+    "pass":"T35T"}];
     localStorage.setItem("Users",JSON.stringify(user));
   } 
 user=JSON.parse(localStorage.getItem("Users"));
