@@ -64,36 +64,17 @@ btnPagar.addEventListener("click", e => {
         });
 
         let ebodyCliente = `
-        <h1>Nombre: ${nombr} </h1>
-        <br>
-        <h1>Correo: ${mail}</h1>
-        <br>
-        <h1>Telefono:${telefon} </h1>
-        <br>
-        <h1>Id:${aidi} </h1>
-        <br>
-        <h1>Detalles del pedido: </h1>
-        <ul>${pedidoDetails}</ul>
-        <br>
-        <h1>Total: ${tot} MXN </h1>
-        <br>
-        <h1>Mensaje: </h1>Pedido Confirmado`;
+        <h3>Estimado ${nombr}, gracias por comprar en La Bolsa Roja, aquí está el resumen de su pedido:</h3>
+        <h3>No. de cliente: ${aidi}</h3>
+        <h3>${mail}</h3>
+        <h3>${telefon}</h3><br>
+        <h3>Detalles del pedido: </h3>
+        <ul>${pedidoDetails}</ul><br>
+        <h3>Total: ${tot} MXN </h3>
+        <p>Su pedido se está procesando.</p>`;
 
-        let ebodyInterno = `
-        <h1>Nombre: ${nombr} </h1>
-        <br>
-        <h1>Correo: ${mail}</h1>
-        <br>
-        <h1>Telefono:${telefon} </h1>
-        <br>
-        <h1>Id:${aidi} </h1>
-        <br>
-        <h1>Detalles del pedido: </h1>
-        <ul>${pedidoDetails}</ul>
-        <br>
-        <h1>Total: ${tot} MXN </h1>
-        <br>
-        <h1>Mensaje: </h1>Pedido Confirmado, se ha enviado una copia al cliente con mail: ${mail}`;
+        let ebodyInterno = ebodyCliente+`<p style="color : red">Se ha enviado una copia al cliente.</p>
+        `;
 
         Email.send({
             SecureToken: "2beb6908-098a-4ce9-8217-645950d7272e",
@@ -120,8 +101,9 @@ btnPagar.addEventListener("click", e => {
         Se ha enviado la confirmación a:<br>
          ${mail}`;
         setTimeout(() => {
-            parrafo.innerHTML = "";
+            parrafo.innerHTML = "Gracias por su compra";
         }, 8000);
+        
     } else {
         contain.style.display = "none";
         parrafo.style = "color: red"
