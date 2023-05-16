@@ -1,16 +1,6 @@
- /*Cover
-
- .container__cover{
-  width: 100%;
-  height: 800px;
-  /*background-image: url(../src/Bolsin.svg);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-
-
-.container__cover .text{
-  max-width: 400px;
+.text {
+  max-width: 80%;
+  margin: 0 auto; /* Para centrar el texto horizontalmente */
 }
 
 .container__cover .text h1{
@@ -21,14 +11,6 @@
 .container__cover .text p{
   font-size: 18px;
   margin-top: 40px;
-}*/
-.cover{
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .container__cover .text input{
@@ -52,7 +34,7 @@
 
 
 .container__cover .svg img{
-  width: 600px;
+  width: 500px;
   animation: move-vector 4s linear infinite;
 }
 
@@ -65,27 +47,53 @@
       transform: translateY(15px);
   }
 }
+
 /*Bolsin responsivo*/
 @media only screen and (max-width: 767px) {
     .svg img {
-      max-width: 100%;
+      max-width: 50%;
       height: auto;
       text-align: center;
     }
   }
-  .text{
+  .container__cover {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
     text-align: center;
-}
-@media only screen and (max-width: 767px) {
-  .cover {
-    max-width: none;
-    height: auto;
-    margin: 0;
-    display: block;
-    align-items: normal;
-    justify-content: normal;
   }
-}
-
-
-
+  
+  .cover {
+    width: 100%;
+  }
+  
+  .text {
+    text-align: center;
+  }
+  
+  .svg {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container__cover {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: initial;
+    }
+    
+    .cover {
+      width: 50%;
+    }
+    
+    .text {
+      text-align: center;
+    }
+    
+    .svg {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }

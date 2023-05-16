@@ -1,5 +1,11 @@
 /*Formulario*/
  
+.input-group-text{
+  background-color: #dc354600;
+    border: var(--bs-border-width) solid #ffc10700;
+
+}
+
 .conformulario{
   padding: 30px;
   background-color: #ffffff;
@@ -40,7 +46,7 @@ textarea{
   width: 22rem;
   border-radius: 7px;
   height: 65px;
-  border-color: white;
+  border-color: gray;
 }
 
 
@@ -146,7 +152,7 @@ footer{
     width: max-content;
     border-radius: 7px;
     height: 65px;
-    border-color: white;
+    border-color: gray;
   }
 }
 
@@ -193,7 +199,7 @@ footer{
     width: 300px;
     border-radius: 7px;
     height: 65px;
-    border-color: white;
+    border-color: gray;
   }
 }
 

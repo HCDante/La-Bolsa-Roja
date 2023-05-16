@@ -11,7 +11,6 @@ if(localStorage.getItem("UsuarioActivo") == null ){
  
 card.innerHTML=`
   <h5 class="card-title"><strong>${usuarioActivo.name}</strong></h5>
-  <h6>ID de usuario: ${usuarioActivo.id} </h6>
   <p class="card-text">Teléfono: ${usuarioActivo.telefon}</p>
   <p class="card-text">Email: ${usuarioActivo.mail}</p>
   <a href="" class="btn btn-danger" id="CerrarSesion">Cerrar Sesión</a>
