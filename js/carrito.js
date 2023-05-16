@@ -12,20 +12,7 @@ if (carrito == undefined) {
     parrafo.style = "color: red"
     parrafo.innerHTML = "Carrito vacío";
 } else if (carrito.length > 0) {
-    let html0 = `
-<thead id="hd">
-                        <tr>
-                            <th>#</th>
-                            <th></th>
-                            <th>Artículo</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Subtotal</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-`;
-    Tabla.insertAdjacentHTML("beforebegin", html0);
+    
 }
 
 actualizarTabla();
@@ -124,16 +111,27 @@ function actualizarTabla() {
         let subtotal = element.inventary * element.price;
         total += subtotal;
         let html = `
-        <tr>
-                  <td>${index + 1}</td>
-                  <td><img  src=${element.image} width="100 px" height="75 px"></td>
-                  <td>${element.title}</td>
-                  
-                  <td>${element.price}</td>
-                  <td>${element.inventary}</td>
-                  <td>${subtotal}</td>
+        <div class="row">
+        <div class="col">
+                   <img  src=${element.image} width="100 px" height="75 px">
+                   </div>
+                  <div class="col">
+                  <td><strong>${element.title}</strong></td>
+                  </div>
+                  <div class="col">
+                  <td>${element.price} MXN c/u </td>
+                  </div>
+                  <div class="col">
+                  <td>Pzas: ${element.inventary} </td>
+                  </div>
+                  <div class="col">
+                  <td>Subtotal : ${subtotal} MXN</td>
+                  </div>
+                  <div class="col">
                   <td><button type="button" onclick="quitarProducto(${element.id})" class="btn btn-danger">Eliminar</button></td>
-                </tr>        
+                  </div>                 
+                  </div>
+                     
         `;
         Tabla.insertAdjacentHTML("beforeend", html);
         localStorage.setItem("carrito", JSON.stringify(carrito));
