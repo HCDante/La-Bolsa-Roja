@@ -9,7 +9,11 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 25px;
-    background-color: lightgray;
+    background-color: rgba(201, 9, 9, 0);
+    border-color: rgb(191, 64, 17);
+    border-radius: 50px;
+    border-style: solid;
+    text-align: center;
 }
 .labelText{
     width: 110px;
@@ -20,7 +24,7 @@
     width: 200px;
       text-align: center;
       margin: auto;
-      color: rgb(198, 51, 51);
+      color: rgb(191, 64, 17);
       padding-top: 20px;
   }
 

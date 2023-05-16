@@ -150,7 +150,7 @@ footer{
   }
 }
 
-@media only screen and (min-width: 451px) {
+@media only screen and (min-width: 400px) {
   footer{
       position: relative;
   }
