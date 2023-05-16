@@ -68,4 +68,5 @@ span.labelText{
 .enviar{
     width: 40%;
     margin-left: 30%;
+    border-style: none;
 }
