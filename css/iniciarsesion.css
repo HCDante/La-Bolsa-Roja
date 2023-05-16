@@ -110,3 +110,14 @@ span.labelText{
     background-color:#ffffff;
     border-radius: 50px;
 }
+
+#button1{
+	width: 45%;
+	margin-right: 18px;
+    border-style: none;
+}
+
+#button2{
+	width: 45%;
+    border-style: none;
+}
