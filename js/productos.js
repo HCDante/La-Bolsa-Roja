@@ -1,4 +1,4 @@
-let productos = JSON.parse(localStorage.getItem("productos")) || [];
+let productos;
 let cardGroup = document.getElementsByClassName("row");
 let carrito=[];
 let cantidad;
@@ -6,7 +6,7 @@ let cantidad;
 function agregarAlCarrito(idk) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  let id = productos.id-1;
+  let id = productos[idk].id - 1;
   let title = productos[idk].title;
   let price = productos[idk].price;
   let image = productos[id].image;
