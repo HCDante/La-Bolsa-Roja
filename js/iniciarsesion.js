@@ -91,13 +91,20 @@ btn1.addEventListener("click", e => {
     let trimEmail = email.value.trim();
     let trimPassword = password.value.trim();
 
+    if (trimEmail == "" || trimPassword == "") {
+        parrafo.innerHTML = "Ingresa Usuario y contraseña.";
+        redBorder(email);
+        redBorder(password);
+        borderTimeout();
+        return;
+    }
 
-    user.forEach(element => {
+    let found = false;
+    for (const element of user) {
         let correo = element.mail;
         let contrasena = element.pass;
-       
-        if (correo == trimEmail && contrasena == trimPassword) {
 
+        if (correo == trimEmail && contrasena == trimPassword) {
             if (localStorage.getItem("UsuarioActivo") != null) {
                 localStorage.removeItem("UsuarioActivo");
             }
@@ -110,26 +117,22 @@ btn1.addEventListener("click", e => {
                 Inicio de sesion exitoso. Redirigiendo (...)
             </div>
          </div>`;
-         if (localStorage.getItem("UsuarioActivo") == null) {
-            localStorage.setItem("UsuarioActivo", JSON.stringify(element));
-            usuarioActivo = JSON.parse(localStorage.getItem("UsuarioActivo"));
-            window.location.replace("../perfil.html");
+            if (localStorage.getItem("UsuarioActivo") == null) {
+                localStorage.setItem("UsuarioActivo", JSON.stringify(element));
+                usuarioActivo = JSON.parse(localStorage.getItem("UsuarioActivo"));
+                window.location.replace("../perfil.html");
+            }
+            setTimeout(() => { }, 4000);
+            found = true;
+            break;
         }
-        setTimeout(() => { }, 4000);
-        }else{
-            redBorder(email);
-            redBorder(password);
-            parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
-        }
+    }
 
-        if(trimEmail=="" || trimPassword==""){
-            parrafo.innerHTML ="Ingresa Usuario y contraseña.";
-            redBorder(email);
-            redBorder(password);
-            
-        }
-
-    });
+    if (!found) {
+        redBorder(email);
+        redBorder(password);
+        parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
+    }
 
     borderTimeout();
 });
